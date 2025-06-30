@@ -42,6 +42,7 @@ local options = {
 	sidescrolloff = 8,
 	-- guifont = "JetBrainsMono Nerd Font:h17", -- the font used in graphical neovim applications
 	guicursor = "",
+	-- colorcolumn = "120",
 }
 
 vim.opt.shortmess:append("c")

@@ -87,6 +87,10 @@ return {
 					},
 					diff,
 					spaces,
+					-- function()
+					-- 	local bac = "test"
+					-- 	return bac
+					-- end,
 					"encoding",
 					filetype,
 				},
