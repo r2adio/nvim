@@ -41,6 +41,7 @@ return {
 				"ts_ls",
 				"gopls",
 				-- "hyprls",
+				"eslint",
 			},
 			automatic_enable = false,
 		})
