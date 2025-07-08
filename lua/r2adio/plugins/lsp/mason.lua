@@ -40,6 +40,7 @@ return {
 				"pylsp", -- in place of pyright
 				"ts_ls",
 				"gopls",
+				"templ",
 				-- "hyprls",
 				"eslint",
 			},
@@ -51,11 +52,10 @@ return {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
-				"black", -- python formatter
-				-- "debugpy", --python begugger
-				"pylint", -- python linter
+				"ruff", --python formatter and linter
+				"debugpy", --python begugger
+				-- "pylint", -- python linter
 				"eslint_d", -- js linter
-				-- "golines", --go formatter
 				"goimports", --go formatter
 			},
 		})

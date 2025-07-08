@@ -115,6 +115,7 @@ return {
 			cssls = {},
 			tailwindcss = {},
 			svelte = {},
+			templ = {},
 			gopls = {
 				settings = {
 					gofumpt = true,

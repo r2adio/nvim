@@ -24,9 +24,9 @@ return {
 				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 			},
 			-- format_on_save = {
-			--   lsp_fallback = true,
-			--   async = false,
-			--   timeout_ms = 1000,
+			-- 	lsp_fallback = true,
+			-- 	async = false,
+			-- 	timeout_ms = 1000,
 			-- },
 		})
 
