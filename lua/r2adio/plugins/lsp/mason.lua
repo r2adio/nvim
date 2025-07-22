@@ -29,10 +29,12 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"clangd",
+				"mesonlsp",
+				-- "docker-compose-language-service",
 				"html",
-				"cssls",
+				-- "cssls",
 				"tailwindcss",
-				"svelte",
+				-- "svelte",
 				"lua_ls",
 				"graphql",
 				"emmet_ls",
