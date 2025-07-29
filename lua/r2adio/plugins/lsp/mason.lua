@@ -32,7 +32,7 @@ return {
 				"mesonlsp",
 				-- "docker-compose-language-service",
 				"html",
-				-- "cssls",
+				"cssls",
 				"tailwindcss",
 				-- "svelte",
 				"lua_ls",

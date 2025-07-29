@@ -75,3 +75,6 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 
 -- make the script executable.
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- for plugin testings
+keymap("n", "<leader>T", "<cmd>PlenaryBustedFile %<cr>", opts)
