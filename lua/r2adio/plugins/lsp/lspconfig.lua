@@ -181,6 +181,7 @@ return {
 					"svelte",
 				},
 			},
+			ruff = {},
 			pylsp = {
 				settings = {
 					pylsp = {
@@ -230,6 +231,8 @@ return {
 			settings = {
 				pylsp = {
 					plugins = {
+						-- jedi.environment, points to python interpreter inside ur .venv
+						jedi = { environment = "./.venv/bin/python" },
 						pycodestyle = {
 							enabled = false,
 							-- ignore = { "W391" },
