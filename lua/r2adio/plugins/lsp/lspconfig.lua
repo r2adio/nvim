@@ -110,6 +110,7 @@ return {
 					},
 				},
 			},
+			prismals = {},
 			clangd = {},
 			mesonlsp = {},
 			html = {},
@@ -236,7 +237,7 @@ return {
 						pycodestyle = {
 							enabled = false,
 							-- ignore = { "W391" },
-							maxLineLength = 100,
+							-- maxLineLength = 100,
 						},
 						pyflakes = { enabled = false },
 						autopep8 = { enabled = false },
