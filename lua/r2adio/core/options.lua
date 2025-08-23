@@ -45,6 +45,9 @@ local options = {
 	-- colorcolumn = "120",
 }
 
+-- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position
+vim.opt.statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %{v:lua.wpm_get()} %y %l/%L     %P"
+
 vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
