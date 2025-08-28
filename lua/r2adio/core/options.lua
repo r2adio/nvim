@@ -45,8 +45,9 @@ local options = {
 	-- colorcolumn = "120",
 }
 
+vim.api.nvim_set_hl(0, "orange", { fg = "#cb9b9b", bold = true }) -- %#orange#MESSAGE%*
 -- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position
-vim.opt.statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %{v:lua.wpm_get()} %y %l/%L     %P"
+vim.opt.statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %#orange#%{v:lua.wpm_get()}%* %y %l/%L     %P"
 
 vim.opt.shortmess:append("c")
 
