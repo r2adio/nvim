@@ -9,7 +9,7 @@ local options = {
 	-- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
 	cmdheight = 0, -- more space in the neovim command line for displaying messages
 	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-	conceallevel = 0, -- so that `` is visible in markdown files
+	conceallevel = 2, -- so that `` is visible in markdown files
 	encoding = "utf-8", -- set encoding
 	fileencoding = "utf-8", -- the encoding written to a file
 	hlsearch = true, -- highlight all matches on previous search pattern
@@ -44,6 +44,9 @@ local options = {
 	guicursor = "",
 	-- colorcolumn = "120",
 }
+
+-- include subdirectories in search
+vim.opt.path:append("**")
 
 vim.api.nvim_set_hl(0, "orange", { fg = "#cb9b9b", bold = true }) -- %#orange#MESSAGE%*
 -- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position

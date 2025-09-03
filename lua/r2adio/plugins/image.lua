@@ -16,12 +16,13 @@ return {
 					clear_in_insert_mode = true,
 					download_remote_images = true,
 					only_render_image_at_cursor = true,
-					only_render_image_at_cursor_mode = "inline", -- popup or inline
+					only_render_image_at_cursor_mode = "popup", -- popup or inline
 					floating_windows = true, -- if true, images will be rendered in floating markdown windows
 					filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
 				},
 				neorg = {
 					enabled = true,
+					only_render_image_at_cursor = true,
 					filetypes = { "norg" },
 				},
 				typst = {

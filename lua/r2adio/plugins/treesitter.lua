@@ -46,6 +46,7 @@ return {
 				"vimdoc",
 				"c",
 				"go",
+				"norg",
 			},
 
 			-- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
