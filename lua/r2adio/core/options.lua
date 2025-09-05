@@ -45,6 +45,10 @@ local options = {
 	-- colorcolumn = "120",
 }
 
+-- netrw settings
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 1
+
 -- include subdirectories in search
 vim.opt.path:append("**")
 
