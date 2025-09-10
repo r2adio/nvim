@@ -2,7 +2,7 @@ return {
 	"nvim-neorg/neorg",
 	lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
 	version = "*", -- Pin Neorg to the latest stable release
-	-- dependencies = { "folke/zen-mode.nvim" },
+	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	config = function()
 		require("neorg").setup({
 			load = {
@@ -17,7 +17,7 @@ return {
 						neorg_leader = "<Leader><Leader>",
 					},
 				},
-				["core.esupports.metagen"] = { config = { type = "auto", update_date = true } },
+				["core.esupports.metagen"] = { config = { type = "auto", update_date = true, author = "r2adio" } },
 				["core.qol.toc"] = {},
 				["core.qol.todo_items"] = {},
 				["core.looking-glass"] = {},
