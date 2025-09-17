@@ -52,6 +52,7 @@ return {
 			-- Default setup for most language servers
 			ts_ls = {
 				settings = {
+					format = { enable = true }, -- Enable formatting
 					typescript = {
 						inlayHints = {
 							includeInlayParameterNameHints = "all",
