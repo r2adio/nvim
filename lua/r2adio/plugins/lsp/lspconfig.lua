@@ -124,12 +124,25 @@ return {
 			lua_ls = {
 				settings = {
 					Lua = {
-						-- make the language server recognize "vim" global
-						diagnostics = {
-							globals = { "vim" },
+						hint = {
+							enable = true, -- enable inlay hints
+							arrayIndex = "Enable", -- show hints for array indices
+							await = true, -- show hints for `await`
+							paramName = "All", -- "All", "Literal", or "Disable"
+							paramType = true, -- show parameter type hints
+							semicolon = "Disable", -- semicolon hints
+							setType = true, -- variable type hints
 						},
-						completion = {
-							callSnippet = "Replace",
+						runtime = { version = "LuaJIT" }, -- LÖVE uses LuaJIT
+						-- make the language server recognize "vim" global
+						diagnostics = { globals = { "vim", "love" } },
+						completion = { callSnippet = "Replace" },
+						workspace = {
+							-- library = {
+							-- 	-- file: https://github.com/love2d-community/love-api/blob/master/love_api.lua
+							-- 	[vim.fn.expand("$HOME/.dotfiles/nvim/lua/love-types")] = true, -- Path to love.lua
+							-- },
+							checkThirdParty = true, -- Avoid unrelated prompts
 						},
 					},
 				},

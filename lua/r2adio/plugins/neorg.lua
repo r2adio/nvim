@@ -1,6 +1,7 @@
 return {
 	"nvim-neorg/neorg",
-	lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+	lazy = true, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+	ft = "norg",
 	version = "*", -- Pin Neorg to the latest stable release
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	config = function()
@@ -14,7 +15,7 @@ return {
 					-- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
 					config = {
 						default_keybinds = true,
-						neorg_leader = "<Leader><Leader>",
+						neorg_leader = "<C-h><Leader>", -- shift + <leader>
 					},
 				},
 				["core.esupports.metagen"] = { config = { type = "auto", update_date = true, author = "r2adio" } },
@@ -30,7 +31,7 @@ return {
 				["core.journal"] = {
 					config = {
 						strategy = "flat",
-						workspace = "Notes",
+						workspace = "default",
 					},
 				},
 			},

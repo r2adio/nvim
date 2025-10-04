@@ -17,25 +17,25 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>tr", function()
+		vim.keymap.set("n", "<leader>Tr", function()
 			require("neotest").run.run({
 				suite = false,
 				testify = true,
 			})
 		end, { desc = "Debug: Running Nearest Test" })
 
-		vim.keymap.set("n", "<leader>tv", function()
+		vim.keymap.set("n", "<leader>Tv", function()
 			require("neotest").summary.toggle()
 		end, { desc = "Debug: Summary Toggle" })
 
-		vim.keymap.set("n", "<leader>ts", function()
+		vim.keymap.set("n", "<leader>Ts", function()
 			require("neotest").run.run({
 				suite = true,
 				testify = true,
 			})
 		end, { desc = "Debug: Running Test Suite" })
 
-		vim.keymap.set("n", "<leader>td", function()
+		vim.keymap.set("n", "<leader>Td", function()
 			require("neotest").run.run({
 				suite = false,
 				testify = true,
@@ -43,11 +43,11 @@ return {
 			})
 		end, { desc = "Debug: Debug Nearest Test" })
 
-		vim.keymap.set("n", "<leader>to", function()
+		vim.keymap.set("n", "<leader>To", function()
 			require("neotest").output.open()
 		end, { desc = "Debug: Open test output" })
 
-		vim.keymap.set("n", "<leader>ta", function()
+		vim.keymap.set("n", "<leader>Ta", function()
 			require("neotest").run.run(vim.fn.getcwd())
 		end, { desc = "Debug: Open test output" })
 	end,

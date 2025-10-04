@@ -9,5 +9,6 @@
     "runtime.unicodeName": true,
     "diagnostics.disable": [
         "undefined-global"
-    ]
+    ],
+    "workspace.checkThirdParty": "Disable"
 }

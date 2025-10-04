@@ -35,7 +35,8 @@ keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 keymap("n", "<leader>T", "<cmd>PlenaryBustedFile %<cr>", opts)
 
 -- toggle netrw
-keymap("n", "<leader>.", "<cmd>Rexplore<cr>")
+keymap("n", "<leader>.", "<cmd>Rexplore<cr>") -- reopen last netrew buffer
+keymap("n", "<leader><leader>", "<cmd>Explore %:p:h<cr>") -- open fresh netrew buffer at current file directory
 
 -- replace autopairs plugin
 local function auto_pairs(open, close)
