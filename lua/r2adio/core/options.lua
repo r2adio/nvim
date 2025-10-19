@@ -8,7 +8,7 @@ local options = {
 	backup = false, -- creates a backup file
 	-- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
 	cmdheight = 0, -- more space in the neovim command line for displaying messages
-	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+	completeopt = { "menu", "menuone", "noselect", "preview", "fuzzy" }, -- mostly just for cmp
 	conceallevel = 2, -- so that `` is visible in markdown files
 	encoding = "utf-8", -- set encoding
 	fileencoding = "utf-8", -- the encoding written to a file
@@ -43,6 +43,10 @@ local options = {
 	-- guifont = "JetBrainsMono Nerd Font:h17", -- the font used in graphical neovim applications
 	guicursor = "",
 	-- colorcolumn = "120",
+	winborder = "single",
+
+	-- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position
+	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %#orange#%{v:lua.wpm_get()}%* %y %l/%L     %P",
 }
 
 -- netrw settings
@@ -53,8 +57,6 @@ vim.g.netrw_liststyle = 1
 vim.opt.path:append("**")
 
 vim.api.nvim_set_hl(0, "orange", { fg = "#cb9b9b", bold = true }) -- %#orange#MESSAGE%*
--- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position
-vim.opt.statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %#orange#%{v:lua.wpm_get()}%* %y %l/%L     %P"
 
 vim.opt.shortmess:append("c")
 
@@ -66,42 +68,31 @@ end
 vim.cmd("set whichwrap+=<,>,[,]")
 vim.cmd([[set iskeyword+=-]]) -- treat hyphens as part of a word
 
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = "*.py",
-	callback = function()
-		-- vim.opt.textwidth = 79
-		-- vim.opt.colorcolumn = "79"
-	end,
-}) -- python formatting
-
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "*.js", "*.html", "*.css", "*.lua", "*.md" },
-	callback = function()
-		vim.opt.tabstop = 2
-		vim.opt.shiftwidth = 2
-		vim.opt.softtabstop = 2
-	end,
-}) -- javascript, html, css, lua, md formatting
-
-vim.api.nvim_create_autocmd("BufReadPost", {
-	pattern = "*",
-	callback = function()
-		if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
-			vim.cmd('normal! g`"')
-		end
-	end,
-}) -- return to last edit position when opening files
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = { "aerospace.toml" },
-	command = "!aerospace reload-config",
-}) -- reload aerospace config
-
---highlight when yanking text
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking test",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+-- Change the Diagnostic symbols in the sign column (gutter)
+vim.diagnostic.config({
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.HINT] = "󰠠 ",
+			[vim.diagnostic.severity.INFO] = " ",
+		},
+	},
 })
+
+vim.diagnostic.config({
+	-- virtual_lines = { current_line = true },
+	virtual_text = { current_line = true },
+	float = { border = "rounded" },
+	update_in_insert = false,
+	severity_sort = true,
+})
+
+vim.lsp.config("*", {
+	capabilities = {
+		textDocument = {
+			foldingRange = { dynamicRegistration = false, lineFoldingOnly = true },
+			semanticTokens = { multilineTokenSupport = true },
+		},
+	},
+}) -- adding capabilities to vim.lsp

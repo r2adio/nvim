@@ -14,8 +14,8 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- buffers
-keymap("n", "<leader>bn", ":bn<cr>", opts)
-keymap("n", "<leader>bp", ":bp<cr>", opts)
+-- keymap("n", "<leader>bp", ":bp<cr>", opts) -- use [b
+-- keymap("n", "<leader>bn", ":bn<cr>", opts) -- use ]b
 keymap("n", "<leader>bk", ":bd<cr>", opts)
 
 -- primeagen

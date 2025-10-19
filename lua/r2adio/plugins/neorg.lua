@@ -8,7 +8,7 @@ return {
 		require("neorg").setup({
 			load = {
 				["core.defaults"] = {},
-				["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
+				-- ["core.completion"] = { config = { engine = "blink.cmp", name = "[Norg]" } },
 				["core.integrations.nvim-cmp"] = {},
 				["core.concealer"] = { config = { icon_preset = "diamond" } },
 				["core.keybinds"] = {

@@ -7,6 +7,10 @@ return {
 	-- 	local gruvbox_settings = {
 	-- 		terminal_colors = true, -- Enable Neovim terminal colors
 	-- 		transparent_mode = true, -- Enable transparent background
+	-- 		overrides = {
+	-- 			StatusLine = { bg = "NONE" },
+	-- 			StatusLineNC = { bg = "NONE" },
+	-- 		},
 	-- 		undercurl = true,
 	-- 		underline = true,
 	-- 		bold = true,

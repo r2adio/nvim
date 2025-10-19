@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{ import = "r2adio.plugins" },
-		{ import = "r2adio.plugins.lsp" },
 	},
 	checker = {
 		enabled = false, -- disables automatic update checking
