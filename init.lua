@@ -4,7 +4,7 @@ require("r2adio.lazy")
 vim.lsp.enable({
 	"clangd",
 	"gopls",
-	"rust-analyzer",
+	"rust_analyzer",
 	"lua_ls",
 	"pylsp",
 	"mesonlsp",

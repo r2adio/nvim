@@ -5,6 +5,7 @@ return {
 	},
 	{
 		"norcalli/nvim-colorizer.lua",
+		lazy = true,
 		vim.keymap.set("n", "<leader>cc", function()
 			require("colorizer").setup()
 		end),
