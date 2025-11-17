@@ -45,16 +45,25 @@ local options = {
 	-- colorcolumn = "120",
 	winborder = "single",
 
+	-- grep options
+	grepprg = "rg --vimgrep --no-heading --smart-case --hidden --glob '!.git'",
+	grepformat = "%f:%l:%c:%m",
+
+	-- find options
+	path = vim.o.path .. ",**",
+	wildmenu = true,
+	wildmode = "longest:full,full",
+	wildignorecase = true,
+	wildignore = vim.o.wildignore .. "node_modules/**, dist/**, build/**, .git/**, .cache/**, .next/**, *.log",
+
 	-- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position
 	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %#orange#%{v:lua.wpm_get()}%* %y %l/%L     %P",
+	-- statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s",
 }
 
 -- netrw settings
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 1
-
--- include subdirectories in search
-vim.opt.path:append("**")
 
 vim.api.nvim_set_hl(0, "orange", { fg = "#cb9b9b", bold = true }) -- %#orange#MESSAGE%*
 

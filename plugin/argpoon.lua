@@ -29,7 +29,7 @@ function M.add_file()
 end
 
 -- Show files in a floating window
-function M.show_files()
+function M.show_list()
 	if #M.files == 0 then
 		print("No files added yet.")
 		return
@@ -92,19 +92,14 @@ function M.remove_file()
 end
 
 -- Clear all files
-function M.clear()
+function M.clear_list()
 	M.files = {}
 	vim.cmd("args")
 	print("Cleared all files.")
 end
 
--- Setup user commands
-vim.api.nvim_create_user_command("MyAdd", M.add_file, { desc = "Add current file" })
-vim.api.nvim_create_user_command("MyShow", M.show_files, { desc = "Show added files" })
--- vim.api.nvim_create_user_command("MyRemove", M.remove_file, { desc = "Remove current file" })
-vim.api.nvim_create_user_command("MyClear", M.clear, { desc = "Clear file list" })
-
 vim.keymap.set("n", "<leader>aa", M.add_file, { desc = "Add current file" })
-vim.keymap.set("n", "<leader>as", M.show_files, { desc = "Show added files" })
+vim.keymap.set("n", "<leader>as", M.show_list, { desc = "Show added files" })
 vim.keymap.set("n", "<leader>ax", M.remove_file, { desc = "Remove current file" })
+vim.keymap.set("n", "<leader>ac", M.clear_list, { desc = "Remove current file" })
 return M

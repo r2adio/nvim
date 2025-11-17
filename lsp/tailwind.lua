@@ -16,6 +16,8 @@ return {
 		"rescript",
 		"typescript",
 		"typescriptreact",
+		-- go/templ
+		"templ",
 	},
 	root_markers = { "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock" },
 	settings = {

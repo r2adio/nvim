@@ -27,11 +27,6 @@ return {
 					"ruff_organize_imports",
 				},
 			},
-			-- format_on_save = {
-			-- 	lsp_fallback = true,
-			-- 	async = false,
-			-- 	timeout_ms = 1000,
-			-- },
 		})
 
 		vim.api.nvim_create_autocmd("InsertLeave", {

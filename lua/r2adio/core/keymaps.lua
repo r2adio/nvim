@@ -13,21 +13,16 @@ keymap("v", "p", '"_dP', opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
--- primeagen
 -- yank in system clipboard
 keymap("n", "<leader>y", '"+y', { noremap = true, silent = true })
 keymap("v", "<leader>y", '"+y', { noremap = true, silent = true })
 keymap("n", "<leader>Y", '"+Y', { noremap = true, silent = true })
-keymap("x", "<leader>p", '"_dP', { noremap = true, silent = true })
 
 -- replace the all instances of word under the cursor
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- make the script executable.
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
--- for plugin testings
-keymap("n", "<leader>gt", "<cmd>PlenaryBustedFile %<cr>", opts)
 
 -- toggle netrw
 keymap("n", "<leader>.", "<cmd>Rexplore<cr>") -- reopen last netrew buffer
@@ -63,3 +58,7 @@ keymap("i", "<C-l>", "<Del>")
 keymap("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
+
+vim.keymap.set("n", "<leader>im", function()
+	require("image")
+end, { silent = true, desc = "Toggle Image Viewer" })

@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking test",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
-		vim.highlight.on_yank()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 50 })
 	end,
 }) --highlight when yanking text
 
@@ -38,6 +38,14 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 		-- vim.opt.colorcolumn = "79"
 	end,
 }) -- python formatting
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "nvim-undotree",
+	callback = function()
+		vim.cmd.wincmd("H")
+		vim.api.nvim_win_set_width(0, 40)
+	end,
+}) -- builtin undotree plugin
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
