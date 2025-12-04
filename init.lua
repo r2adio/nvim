@@ -6,6 +6,7 @@ vim.lsp.enable({
 	"gopls",
 	"templ",
 	"rust_analyzer",
+	"zls",
 	"lua_ls",
 	"pylsp",
 	"mesonlsp",

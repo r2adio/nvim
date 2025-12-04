@@ -33,7 +33,7 @@ reset_wpm = function()
 	wpm_data.start_time = vim.loop.hrtime()
 	wpm_data.last_time = wpm_data.start_time
 	wpm_data.current_wpm = 0
-	vim.cmd("redrawstatus")
+	-- vim.cmd("redrawstatus")
 end
 
 -- Update WPM calculation
@@ -122,7 +122,7 @@ start_wpm = function()
 		config.update_interval,
 		vim.schedule_wrap(function()
 			update_wpm()
-			vim.cmd("redrawstatus")
+			-- vim.cmd("redrawstatus")
 		end)
 	)
 end

@@ -57,7 +57,7 @@ local options = {
 	wildignore = vim.o.wildignore .. "node_modules/**, dist/**, build/**, .git/**, .cache/**, .next/**, *.log",
 
 	-- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position
-	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %#orange#%{v:lua.wpm_get()}%* %y %l/%L     %P",
+	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %#yellow#%{v:lua.wpm_get()}%* %y %l/%L     %P",
 	-- statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s",
 }
 
@@ -65,7 +65,7 @@ local options = {
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 1
 
-vim.api.nvim_set_hl(0, "orange", { fg = "#cb9b9b", bold = true }) -- %#orange#MESSAGE%*
+vim.api.nvim_set_hl(0, "yellow", { fg = "#d5c4a1", bold = true })
 
 vim.opt.shortmess:append("c")
 
