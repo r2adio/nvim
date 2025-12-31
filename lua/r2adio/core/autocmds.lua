@@ -66,3 +66,27 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 }) -- auto-completion w/ vim.lsp.completion.enable
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "coal",
+	callback = function()
+		-- Transparent backgrounds
+		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		-- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+		-- vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })
+		-- vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
+
+		vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#4a4949" })
+		vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#4a4949" })
+		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "", bold = true })
+
+		-- vim.api.nvim_set_hl(0, "GitGutterAdd", { fg = "#a5a5a5" })
+		-- vim.api.nvim_set_hl(0, "GitGutterChange", { fg = "#a5a5a5" })
+		-- vim.api.nvim_set_hl(0, "GitGutterDelete", { fg = "#a5a5a5" })
+
+		vim.api.nvim_set_hl(0, "MiniPickPrompt", { fg = "#999999" }) -- 153
+		vim.api.nvim_set_hl(0, "MiniPickPromptPrefix", { fg = "#999999" }) -- 153
+		vim.api.nvim_set_hl(0, "MiniPickPromptCaret", { fg = "#737373", bold = true }) -- 115
+	end,
+}) -- coal colorscheme

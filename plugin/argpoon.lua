@@ -54,7 +54,7 @@ function M.show_list()
 	}
 
 	local win = vim.api.nvim_open_win(buf, true, opts)
-	vim.api.nvim_buf_set_option(buf, "modifiable", true)
+	vim.api.nvim_set_option_value("modifiable", true, { buf = buf })
 
 	local lines = {}
 	for i, f in ipairs(M.files) do
@@ -62,7 +62,26 @@ function M.show_list()
 	end
 
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-	vim.api.nvim_buf_set_option(buf, "modifiable", false)
+	vim.api.nvim_set_option_value("modifiable", true, { buf = buf })
+	vim.api.nvim_set_option_value("buftype", "nofile", { buf = buf })
+	vim.api.nvim_set_option_value("bufhidden", "wipe", { buf = buf })
+	vim.api.nvim_set_option_value("swapfile", false, { buf = buf })
+
+	vim.api.nvim_create_autocmd("BufWinLeave", {
+		buffer = buf,
+		once = true,
+		callback = function()
+			lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+
+			M.files = {}
+			for _, line in ipairs(lines) do
+				local path = line:match("^%d+%.%s+(.*)$")
+				if path and path ~= "" then
+					table.insert(M.files, vim.fn.fnamemodify(path, ":p"))
+				end
+			end
+		end,
+	})
 
 	-- Keymaps for navigation
 	vim.keymap.set("n", "<CR>", function()
@@ -101,5 +120,5 @@ end
 vim.keymap.set("n", "<leader>aa", M.add_file, { desc = "Add current file" })
 vim.keymap.set("n", "<leader>as", M.show_list, { desc = "Show added files" })
 vim.keymap.set("n", "<leader>ax", M.remove_file, { desc = "Remove current file" })
-vim.keymap.set("n", "<leader>ac", M.clear_list, { desc = "Remove current file" })
+vim.keymap.set("n", "<leader>ac", M.clear_list, { desc = "Remove all files" })
 return M

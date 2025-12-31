@@ -25,5 +25,12 @@ return {
 		keymap("n", "<leader>fb", "<cmd>Pick buffers<cr>", { desc = "Find Buffers" })
 		keymap("n", "<leader>fh", "<cmd>Pick help<cr>", { desc = "Find Help" })
 		keymap("n", "<leader>fk", "<cmd>Pick keymaps<cr>", { desc = "Keymaps" })
+
+		-- gray background for selected item
+		vim.api.nvim_set_hl(0, "MiniPickMatchCurrent", {
+			bg = "#2a2a2a",
+			fg = "NONE",
+			bold = true,
+		})
 	end,
 }

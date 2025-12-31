@@ -1,5 +1,6 @@
 return {
 	"tpope/vim-fugitive",
+	dependencies = { "airblade/vim-gitgutter" },
 	config = function()
 		vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
@@ -23,11 +24,10 @@ return {
 				-- NOTE: It allows me to easily set the branch i am pushing and any tracking
 				-- needed if i did not set the branch up correctly
 				vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts)
-				vim.keymap.set("n", "<leader>ll", ":Git log --graph --decorate --oneline --all")
+				vim.keymap.set("n", "<leader>ll", ":Git log --graph --decorate --oneline")
+				vim.keymap.set("n", "<leader>la", ":Git log --graph --decorate --oneline --all")
 			end,
 		})
-
-		-- vim.keymap.set("n", "gh", "<cmd>diffget //2<CR>")
-		-- vim.keymap.set("n", "gu", "<cmd>diffget //3<CR>")
+		vim.keymap.set("n", "<leader>hU", "<cmd>G restore --staged %<cr>", opts)
 	end,
 }

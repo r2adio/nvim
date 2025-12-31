@@ -37,10 +37,7 @@ return {
 			},
 		},
 
-		snippets = {
-			preset = "default",
-			providers = { "luasnip", "mini_snippets", "vsnip" },
-		},
+		snippets = { preset = "default" },
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},

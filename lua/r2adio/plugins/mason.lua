@@ -33,8 +33,9 @@ return {
 				-- "graphql",
 				"emmet-language-server",
 				"prisma-language-server",
-				"python-lsp-server",
+				"pyright",
 				"typescript-language-server",
+				"zls",
 				"gopls",
 				"templ",
 				"eslint-lsp",
@@ -42,7 +43,6 @@ return {
 				-- Formatters, Linters, DAPs
 				"prettier",
 				"stylua",
-				-- "isort",
 				"ruff",
 				"debugpy",
 				"eslint_d",
