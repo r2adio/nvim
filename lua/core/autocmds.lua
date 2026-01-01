@@ -47,26 +47,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 }) -- builtin undotree plugin
 
-vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function(ev)
-		local client = vim.lsp.get_client_by_id(ev.data.client_id)
-		-- nil check for client
-		if not client then
-			return
-		end
-		-- check if blink.cmp or nvim-cmp is loaded
-		local has_blink = pcall(require, "blink.cmp")
-		local has_cmp = pcall(require, "cmp")
-
-		-- only enable native completion if no completion plugin exists
-		if not has_blink and not has_cmp then
-			if client:supports_method("textDocument/completion") then
-				vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = false })
-			end
-		end
-	end,
-}) -- auto-completion w/ vim.lsp.completion.enable
-
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "coal",
 	callback = function()

@@ -9,7 +9,6 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
--- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
@@ -54,11 +53,34 @@ keymap("i", "/*", "/**/<left><left>")
 
 keymap("i", "<C-l>", "<Del>")
 
--- lsp inlay_hint
-keymap("n", "<leader>ih", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+-- undotree
+vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { silent = true, desc = "Open UndoTree" })
+-- nvim-colorizer
+vim.keymap.set("n", "<leader>cc", function()
+	require("colorizer").setup()
 end)
 
-vim.keymap.set("n", "<leader>im", function()
-	require("image")
-end, { silent = true, desc = "Toggle Image Viewer" })
+-- fugitiv
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+local autocmd = vim.api.nvim_create_autocmd
+autocmd("BufWinEnter", {
+	group = vim.api.nvim_create_augroup("Fugitive_Config", {}),
+	pattern = "*",
+	callback = function()
+		if vim.bo.ft ~= "fugitive" then -- activate only in fugitive buffers
+			return
+		end
+		local bufnr = vim.api.nvim_get_current_buf()
+		-- local opts = { buffer = bufnr, noremap = true, silent = true }
+		vim.keymap.set("n", "<leader>P", function() -- rebase always
+			vim.cmd.Git({ "pull", "--rebase" })
+		end, opts)
+
+		-- NOTE: It allows me to easily set the branch i am pushing and any tracking
+		-- needed if i did not set the branch up correctly
+		vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts)
+		vim.keymap.set("n", "<leader>ll", ":Git log --graph --decorate --oneline")
+		vim.keymap.set("n", "<leader>la", ":Git log --graph --decorate --oneline --all")
+	end,
+})
+vim.keymap.set("n", "<leader>hU", "<cmd>G restore --staged %<cr>", opts)
