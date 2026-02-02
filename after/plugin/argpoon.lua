@@ -3,12 +3,10 @@ local M = {}
 -- We'll store files in a Lua table (linked to Vim's arglist)
 M.files = {}
 
--- Helper: Refresh arglist to match M.files
 local function update_arglist()
 	vim.cmd("args " .. table.concat(M.files, " "))
 end
 
--- Add current file to list
 function M.add_file()
 	local file = vim.fn.expand("%:p")
 	if file == "" then
@@ -28,7 +26,6 @@ function M.add_file()
 	print("Added: " .. file)
 end
 
--- Show files in a floating window
 function M.show_list()
 	if #M.files == 0 then
 		print("No files added yet.")
@@ -36,10 +33,10 @@ function M.show_list()
 	end
 
 	local buf = vim.api.nvim_create_buf(false, true)
-	local width = math.floor(vim.o.columns * 0.3)
-	local height = math.min(#M.files + 2, math.floor(vim.o.lines * 0.5))
-	local row = math.floor((vim.o.lines - height) / 2)
-	local col = math.floor((vim.o.columns - width) / 2)
+	local width = math.floor(vim.o.columns * 0.20)
+	local height = math.min(#M.files + 1, math.floor(vim.o.lines * 0.5))
+	local row = math.floor((vim.o.lines - height) / 1.1)
+	local col = math.floor((vim.o.columns - width) / 1)
 
 	local opts = {
 		style = "minimal",
@@ -49,8 +46,8 @@ function M.show_list()
 		row = row,
 		col = col,
 		border = "rounded",
-		title = "Argpoon",
-		title_pos = "left",
+		title = " Argpoon ",
+		title_pos = "center",
 	}
 
 	local win = vim.api.nvim_open_win(buf, true, opts)
@@ -83,7 +80,6 @@ function M.show_list()
 		end,
 	})
 
-	-- Keymaps for navigation
 	vim.keymap.set("n", "<CR>", function()
 		local line = vim.fn.line(".")
 
@@ -96,7 +92,6 @@ function M.show_list()
 	end, { buffer = buf, nowait = true })
 end
 
--- Remove current file from list
 function M.remove_file()
 	local file = vim.fn.expand("%:p")
 	for i, f in ipairs(M.files) do
@@ -110,7 +105,32 @@ function M.remove_file()
 	print("File not found in list: " .. file)
 end
 
--- Clear all files
+function M.open_file_by_index(index)
+	if type(index) ~= "number" or index <= 0 or index > #M.files then
+		print("Invalid index: " .. tostring(index) .. ". Use 1-" .. #M.files)
+		return
+	end
+
+	local file = M.files[index]
+	vim.cmd("edit " .. file)
+	print("Opened: " .. vim.fn.fnamemodify(file, ":."))
+end
+
+function M.prompt_and_open()
+	if #M.files == 0 then
+		print("No files added yet.")
+		return
+	end
+
+	local input = vim.fn.input("Open file by index (1-" .. #M.files .. "): ")
+	if input == "" then
+		return
+	end
+
+	local index = tonumber(input)
+	M.open_file_by_index(index)
+end
+
 function M.clear_list()
 	M.files = {}
 	vim.cmd("args")
@@ -121,4 +141,19 @@ vim.keymap.set("n", "<leader>aa", M.add_file, { desc = "Add current file" })
 vim.keymap.set("n", "<leader>as", M.show_list, { desc = "Show added files" })
 vim.keymap.set("n", "<leader>ax", M.remove_file, { desc = "Remove current file" })
 vim.keymap.set("n", "<leader>ac", M.clear_list, { desc = "Remove all files" })
+vim.keymap.set("n", "<leader>an", M.prompt_and_open, { desc = "Open file by index" })
+
+vim.api.nvim_create_user_command("ArgpoonOpen", function(opts)
+	M.open_file_by_index(tonumber(opts.args))
+end, {
+	nargs = 1,
+	complete = function()
+		local indices = {}
+		for i = 1, #M.files do
+			table.insert(indices, tostring(i))
+		end
+		return indices
+	end,
+})
+
 return M

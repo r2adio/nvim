@@ -34,10 +34,22 @@ return {
 				autoSearchPaths = true,
 				useLibraryCodeForTypes = true,
 				diagnosticMode = "openFilesOnly",
+
+				inlayHints = {
+					variableTypes = true,
+					functionReturnTypes = true,
+					callArgumentNames = true,
+					genericTypes = true,
+				},
 			},
 		},
 	},
 	on_attach = function(client, bufnr)
+		-- Enable inlay hints (Neovim ≥ 0.10)
+		if client.server_capabilities.inlayHintProvider then
+			vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+		end
+
 		-- vim.api.nvim_buf_create_user_command(bufnr, 'LspPyrightOrganizeImports', function()
 		--   local params = {
 		--     command = 'pyright.organizeimports',

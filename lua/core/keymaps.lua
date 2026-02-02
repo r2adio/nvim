@@ -60,8 +60,8 @@ vim.keymap.set("n", "<leader>cc", function()
 	require("colorizer").setup()
 end)
 
--- fugitiv
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+-- fugitive
+vim.keymap.set("n", "gs", vim.cmd.Git)
 local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufWinEnter", {
 	group = vim.api.nvim_create_augroup("Fugitive_Config", {}),
@@ -73,7 +73,7 @@ autocmd("BufWinEnter", {
 		local bufnr = vim.api.nvim_get_current_buf()
 		-- local opts = { buffer = bufnr, noremap = true, silent = true }
 		vim.keymap.set("n", "<leader>P", function() -- rebase always
-			vim.cmd.Git({ "pull", "--rebase" })
+			vim.cmd("Git pull --rebase")
 		end, opts)
 
 		-- NOTE: It allows me to easily set the branch i am pushing and any tracking

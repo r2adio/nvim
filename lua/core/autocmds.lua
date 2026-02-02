@@ -48,25 +48,92 @@ vim.api.nvim_create_autocmd("FileType", {
 }) -- builtin undotree plugin
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-	pattern = "coal",
+	pattern = "*",
 	callback = function()
-		-- Transparent backgrounds
-		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-		-- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-		-- vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })
-		-- vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
-
-		vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#4a4949" })
-		vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#4a4949" })
-		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "", bold = true })
-
-		-- vim.api.nvim_set_hl(0, "GitGutterAdd", { fg = "#a5a5a5" })
-		-- vim.api.nvim_set_hl(0, "GitGutterChange", { fg = "#a5a5a5" })
-		-- vim.api.nvim_set_hl(0, "GitGutterDelete", { fg = "#a5a5a5" })
-
-		vim.api.nvim_set_hl(0, "MiniPickPrompt", { fg = "#999999" }) -- 153
-		vim.api.nvim_set_hl(0, "MiniPickPromptPrefix", { fg = "#999999" }) -- 153
-		vim.api.nvim_set_hl(0, "MiniPickPromptCaret", { fg = "#737373", bold = true }) -- 115
+		local bg_color = "#000000"
+		local inactive_bg_color = "#141617"
+		local groups = {
+			"Normal",
+			"NormalFloat",
+			"SignColumn",
+			"FoldColumn",
+			"WinSeparator", -- Modern name for VertSplit
+		}
+		for _, group in ipairs(groups) do
+			vim.api.nvim_set_hl(0, group, { bg = bg_color })
+		end
+		vim.api.nvim_set_hl(0, "NormalNC", { bg = inactive_bg_color })
 	end,
-}) -- coal colorscheme
+})
+
+-- Custom command for running SQL queries with URL persistence
+vim.api.nvim_create_user_command("DBquery", function(opts)
+	---@param url_arg? string
+	---@return string|nil
+	local function get_db_url(url_arg)
+		-- use bang to force prompt for new URL
+		if opts.bang then
+			local url = vim.fn.input("Database URL: ")
+			if url and url ~= "" then
+				vim.g.dadbod_last_url = url
+				return url
+			end
+			return nil
+		end
+
+		-- use given URL
+		if url_arg and url_arg ~= "" then
+			vim.g.dadbod_last_url = url_arg
+			return url_arg
+		end
+
+		-- use last used URL
+		if vim.g.dadbod_last_url and vim.g.dadbod_last_url ~= "" then
+			return vim.g.dadbod_last_url
+		end
+
+		-- prompt for new URL
+		local url = vim.fn.input("Database URL: ")
+		if url and url ~= "" then
+			vim.g.dadbod_last_url = url
+			return url
+		end
+
+		return nil
+	end
+
+	local db_url
+	local query
+	if #opts.fargs >= 2 then
+		-- URL + query
+		db_url = get_db_url(opts.fargs[1])
+		query = table.concat(opts.fargs, " ", 2)
+	elseif #opts.fargs == 1 then
+		-- Query only
+		db_url = get_db_url(nil)
+		query = opts.fargs[1]
+	else
+		-- No args → buffer / range
+		db_url = get_db_url(nil)
+	end
+	if not db_url then
+		vim.notify("No database URL provided", vim.log.levels.ERROR)
+		return
+	end
+
+	if query then -- Inline query
+		vim.cmd("DB " .. db_url .. " " .. query .. "")
+		return
+	end
+
+	if opts.range == 0 then -- buffer / range execution
+		vim.cmd("DB " .. db_url .. " < %")
+	else
+		vim.cmd(opts.line1 .. "," .. opts.line2 .. "DB " .. db_url)
+	end
+end, {
+	nargs = "?",
+	range = true,
+	bang = true,
+	desc = "Run SQL query with optional database URL (persists last used URL)",
+}) -- vim-dadbod custom command

@@ -4,11 +4,11 @@ return {
 	root_markers = {
 		".luarc.json",
 		".luarc.jsonc",
-		".luacheckrc",
-		".stylua.toml",
-		"stylua.toml",
-		"selene.toml",
-		"selene.yml",
+		-- ".luacheckrc",
+		-- ".stylua.toml",
+		-- "stylua.toml",
+		-- "selene.toml",
+		-- "selene.yml",
 		".git",
 	},
 	settings = {
@@ -22,7 +22,7 @@ return {
 				semicolon = "Disable", -- semicolon hints
 				setType = true, -- variable type hints
 			},
-			runtime = { version = "LuaJIT" }, -- LÖVE uses LuaJIT
+			-- runtime = { version = "LuaJIT" }, -- LÖVE uses LuaJIT
 			-- make the language server recognize "vim" global
 			diagnostics = { globals = { "vim", "love" } },
 			completion = { callSnippet = "Replace" },
