@@ -47,6 +47,7 @@ later(function()
 	add({ source = "chentoast/marks.nvim" })
 	add({ source = "norcalli/nvim-colorizer.lua" })
 	add({ source = "tpope/vim-fugitive", depends = { "airblade/vim-gitgutter", "tpope/vim-rhubarb" } })
+	add({ source = "skanehira/gh.vim" })
 end)
 
 now(function()

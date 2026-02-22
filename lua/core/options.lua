@@ -65,7 +65,7 @@ local options = {
 	}),
 
 	-- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position
-	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %#yellow#%{v:lua.wpm_get()}%* %y %l/%L     %P",
+	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %y %c-%l/%L    %P",
 	-- statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s",
 }
 
@@ -76,6 +76,9 @@ vim.g.undotree_SplitWidth = 44
 -- netrw settings
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 1
+
+-- gh.vim settings
+vim.g.gh_token = vim.fn.system("gh auth token"):gsub("%s+", "")
 
 vim.api.nvim_set_hl(0, "yellow", { fg = "#d5c4a1", bold = true })
 

@@ -16,6 +16,7 @@ return {
 		"rescript",
 		"typescript",
 		"typescriptreact",
+		"astro",
 		-- go/templ
 		"templ",
 	},

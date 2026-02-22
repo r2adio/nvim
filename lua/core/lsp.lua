@@ -11,6 +11,7 @@ vim.lsp.enable({
 	"ts_ls",
 	"tailwind",
 	"emmet_ls",
+	"astro-ls",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {

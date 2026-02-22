@@ -20,9 +20,6 @@ keymap("n", "<leader>Y", '"+Y', { noremap = true, silent = true })
 -- replace the all instances of word under the cursor
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
--- make the script executable.
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
 -- toggle netrw
 keymap("n", "<leader>.", "<cmd>Rexplore<cr>") -- reopen last netrew buffer
 keymap("n", "<leader><leader>", "<cmd>Explore %:p:h<cr>") -- open fresh netrew buffer at current file directory
@@ -53,12 +50,11 @@ keymap("i", "/*", "/**/<left><left>")
 
 keymap("i", "<C-l>", "<Del>")
 
+-- kulala.nvim
+vim.keymap.set("n", "<leader>x", ":lua require('kulala').",{ silent = true, desc = "Open Kulala" })
+
 -- undotree
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { silent = true, desc = "Open UndoTree" })
--- nvim-colorizer
-vim.keymap.set("n", "<leader>cc", function()
-	require("colorizer").setup()
-end)
 
 -- fugitive
 vim.keymap.set("n", "gs", vim.cmd.Git)

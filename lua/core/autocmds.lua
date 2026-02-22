@@ -50,8 +50,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
-		local bg_color = "#000000"
-		local inactive_bg_color = "#141617"
+		local bg_color = ""
+		local inactive_bg_color = ""
 		local groups = {
 			"Normal",
 			"NormalFloat",
