@@ -2,15 +2,18 @@ local now, later = MiniDeps.now, MiniDeps.later
 
 now(function()
 	require("plugins.colorscheme")
-	require("plugins.local")
 end)
 
 later(function()
+	require("plugins.local")
 	require("plugins.mini")
 	require("plugins.mason")
 	require("plugins.dap")
 	require("plugins.conform")
 	require("plugins.lint")
+	require("litee.lib").setup()
+	require("litee.gh").setup()
+	require("colorizer").setup()
 end)
 
 later(function()

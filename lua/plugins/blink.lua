@@ -3,6 +3,7 @@ local sources = {
 
 	per_filetype = {
 		org = { "orgmode", "buffer" },
+		sql = { "snippets", "dadbod", "buffer" },
 	},
 
 	providers = {
@@ -11,6 +12,7 @@ local sources = {
 			module = "orgmode.org.autocompletion.blink",
 			score_offset = 75,
 		},
+		dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 	},
 }
 
@@ -22,6 +24,10 @@ require("blink.cmp").setup({
 	completion = {
 		keyword = { range = "full" },
 		documentation = { auto_show = true },
+		menu = {
+			border = "",
+			draw = { columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind" } } },
+		},
 	},
 
 	signature = {

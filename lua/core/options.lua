@@ -9,6 +9,7 @@ local options = {
 	-- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
 	cmdheight = 1, -- more space in the neovim command line for displaying messages
 	completeopt = { "menu", "menuone", "noselect", "preview", "fuzzy" }, -- mostly just for cmp
+	shortmess = { I = true, c = true }, -- don't give |ins-completion-menu| messages
 	conceallevel = 2, -- so that `` is visible in markdown files
 	encoding = "utf-8", -- set encoding
 	fileencoding = "utf-8", -- the encoding written to a file
@@ -64,11 +65,9 @@ local options = {
 		"*.log",
 	}),
 
-	-- filename, modified[+], read-only{RO}, help-file{HLP}, preview{PREVIEW}, filetype, current-line, total-lines, position
 	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %y %c-%l/%L    %P",
-	-- statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s",
 }
-
+vim.opt.rtp:append("~/projects/exec.nvim")
 -- undotree settings
 vim.g.undotree_WindowLayout = 4
 vim.g.undotree_SplitWidth = 44
@@ -80,9 +79,7 @@ vim.g.netrw_liststyle = 1
 -- gh.vim settings
 vim.g.gh_token = vim.fn.system("gh auth token"):gsub("%s+", "")
 
-vim.api.nvim_set_hl(0, "yellow", { fg = "#d5c4a1", bold = true })
-
-vim.opt.shortmess:append("c")
+-- vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
 	vim.opt[k] = v

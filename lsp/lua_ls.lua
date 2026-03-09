@@ -4,11 +4,6 @@ return {
 	root_markers = {
 		".luarc.json",
 		".luarc.jsonc",
-		-- ".luacheckrc",
-		-- ".stylua.toml",
-		-- "stylua.toml",
-		-- "selene.toml",
-		-- "selene.yml",
 		".git",
 	},
 	settings = {
@@ -28,12 +23,10 @@ return {
 			completion = { callSnippet = "Replace" },
 			workspace = {
 				checkThirdParty = false,
-				-- tells lua_ls where to find all the lua files that you have
-				-- loaded for ur nvim config
 				library = {
+					vim.env.VIMRUNTIME .. "/lua",
 					"${3rd}/luv/library",
-					"${3rd}/luassert/library",
-					unpack(vim.api.nvim_get_runtime_file("", true)),
+					-- "${3rd}/luassert/library",
 				},
 			},
 		},

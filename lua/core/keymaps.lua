@@ -51,7 +51,7 @@ keymap("i", "/*", "/**/<left><left>")
 keymap("i", "<C-l>", "<Del>")
 
 -- kulala.nvim
-vim.keymap.set("n", "<leader>x", ":lua require('kulala').",{ silent = true, desc = "Open Kulala" })
+vim.keymap.set("n", "<leader>x", ":lua require('kulala').", { silent = true, desc = "Open Kulala" })
 
 -- undotree
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { silent = true, desc = "Open UndoTree" })
