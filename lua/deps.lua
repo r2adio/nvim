@@ -34,7 +34,7 @@ later(function()
 end)
 
 later(function()
-	add({ source = "zbirenbaum/copilot.lua" })
+	add({ source = "ThePrimeagen/99" })
 	add({ source = "mbbill/undotree" })
 	add({ source = "nvim-orgmode/orgmode" })
 	add({ source = "chentoast/marks.nvim" })

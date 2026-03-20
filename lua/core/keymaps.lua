@@ -51,13 +51,13 @@ keymap("i", "/*", "/**/<left><left>")
 keymap("i", "<C-l>", "<Del>")
 
 -- kulala.nvim
-vim.keymap.set("n", "<leader>x", ":lua require('kulala').", { silent = true, desc = "Open Kulala" })
+keymap("n", "<leader>x", ":lua require('kulala').", { silent = true, desc = "Open Kulala" })
 
 -- undotree
-vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { silent = true, desc = "Open UndoTree" })
+keymap("n", "<leader>u", ":UndotreeToggle<cr>", { silent = true, desc = "Open UndoTree" })
 
 -- fugitive
-vim.keymap.set("n", "gs", vim.cmd.Git)
+keymap("n", "gs", vim.cmd.Git)
 local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufWinEnter", {
 	group = vim.api.nvim_create_augroup("Fugitive_Config", {}),
@@ -68,15 +68,15 @@ autocmd("BufWinEnter", {
 		end
 		local bufnr = vim.api.nvim_get_current_buf()
 		-- local opts = { buffer = bufnr, noremap = true, silent = true }
-		vim.keymap.set("n", "<leader>P", function() -- rebase always
+		keymap("n", "<leader>P", function() -- rebase always
 			vim.cmd("Git pull --rebase")
 		end, opts)
 
 		-- NOTE: It allows me to easily set the branch i am pushing and any tracking
 		-- needed if i did not set the branch up correctly
-		vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts)
-		vim.keymap.set("n", "<leader>ll", ":Git log --graph --decorate --oneline")
-		vim.keymap.set("n", "<leader>la", ":Git log --graph --decorate --oneline --all")
+		keymap("n", "<leader>t", ":Git push -u origin ", opts)
+		keymap("n", "<leader>ll", ":Git log --graph --decorate --oneline")
+		keymap("n", "<leader>la", ":Git log --graph --decorate --oneline --all")
 	end,
 })
-vim.keymap.set("n", "<leader>hU", "<cmd>G restore --staged %<cr>", opts)
+keymap("n", "<leader>hU", "<cmd>G restore --staged %<cr>", opts)

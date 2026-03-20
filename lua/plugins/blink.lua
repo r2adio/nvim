@@ -22,8 +22,9 @@ require("blink.cmp").setup({
 	appearance = { nerd_font_variant = "mono" },
 
 	completion = {
+		ghost_text = { enabled = true, show_with_selection = true },
 		keyword = { range = "full" },
-		documentation = { auto_show = true },
+		documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		menu = {
 			border = "",
 			draw = { columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind" } } },
@@ -33,7 +34,6 @@ require("blink.cmp").setup({
 	signature = {
 		enabled = true,
 		window = {
-			border = "single",
 			show_documentation = true,
 		},
 	},

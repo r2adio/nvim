@@ -1,4 +1,4 @@
--- vim.cmd("colorscheme gruvbox-material")
+-- vim.cmd("colorscheme retrobox")
 
 require("rose-pine").setup({
 	variant = "auto",
@@ -8,4 +8,4 @@ require("rose-pine").setup({
 		transparency = true,
 	},
 })
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme rose-pine-moon")

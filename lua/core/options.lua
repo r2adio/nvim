@@ -44,7 +44,7 @@ local options = {
 	-- guifont = "JetBrainsMono Nerd Font:h17", -- the font used in graphical neovim applications
 	guicursor = "",
 	colorcolumn = "100",
-	winborder = "single",
+	winborder = "rounded",
 
 	-- grep options
 	grepprg = "rg --vimgrep --no-heading --smart-case --hidden --glob '!.git'",
