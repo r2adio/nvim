@@ -1,23 +1,21 @@
-require("mini.extra").setup({})
-require("mini.pick").setup({
-	mappings = {
-		choose_marked = "<C-q>",
+require("fzf-lua").setup({
+	winopts = {
+		height = 0.45, -- window height
+		width = 1.00, -- window width
+		row = 1.00, -- window row position (0=top, 1=bottom)
+		col = 1.00, -- window col position (0=left, 1=right)
+		border = "rounded",
 	},
-	window = {
-		config = {
-			border = "rounded",
-			relative = "editor",
-		},
-		prompt_prefix = "ㄓ",
-		prompt_caret = "▓",
+	fzf_opts = {
+		-- options are sent as `<left>=<right>`
+		-- set to `false` to remove a flag
+		-- set to `true` for a no-value flag
+		-- for raw args use `fzf_args` instead
+		["--ansi"] = true,
+		["--info"] = "inline-right", -- fzf < v0.42 = "inline"
+		["--height"] = "100%",
+		["--layout"] = "reverse",
+		["--border"] = "none",
+		["--highlight-line"] = true, -- fzf >= v0.53
 	},
 })
-vim.keymap.set("n", "<leader>p", ":Pick ", { desc = "mini.pick commands" })
--- gray background for selected item
-vim.api.nvim_set_hl(0, "MiniPickMatchCurrent", {
-	bg = "#2a2a2a",
-	fg = "NONE",
-	bold = true,
-})
-
-require("mini.test").setup({})

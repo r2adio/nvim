@@ -65,6 +65,8 @@ local options = {
 		"*.log",
 	}),
 
+	spell = true,
+	spelllang = { "en_us" },
 	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %y %c-%l/%L    %P",
 }
 vim.opt.rtp:append("~/projects/exec.nvim")

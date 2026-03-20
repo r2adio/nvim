@@ -3,7 +3,6 @@ require("mini.deps").setup()
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 later(function()
-	-- add({ source = "windwp/nvim-ts-autotag" })
 	add({ source = "nvim-treesitter/nvim-treesitter-context" })
 	add({
 		source = "nvim-treesitter/nvim-treesitter",
@@ -20,6 +19,8 @@ later(function()
 end)
 
 later(function()
+	-- add({ source = "comfysage/artio.nvim" })
+	add({ source = "ibhagwan/fzf-lua" })
 	add({
 		source = "saghen/blink.cmp",
 		checkout = "v1.8.0",

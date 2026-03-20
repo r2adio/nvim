@@ -6,7 +6,7 @@ end)
 
 later(function()
 	require("plugins.local")
-	require("plugins.mini")
+	-- require("plugins.mini")
 	require("plugins.mason")
 	require("plugins.dap")
 	require("plugins.conform")
