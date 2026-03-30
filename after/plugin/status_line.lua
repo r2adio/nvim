@@ -9,3 +9,4 @@ function _G.git_branch()
 	end
 	return ""
 end
+vim.o.statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %y %c-%l/%L    %P"

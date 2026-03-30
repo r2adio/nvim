@@ -1,6 +1,6 @@
 local function get_typescript_server_path(root_dir)
 	local tsdk = root_dir .. "/node_modules/typescript/lib"
-	local stat = vim.loop.fs_stat(tsdk)
+	local stat = vim.uv.fs_stat(tsdk)
 	if stat and stat.type == "directory" then
 		return tsdk
 	end

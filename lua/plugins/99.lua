@@ -1,5 +1,6 @@
-local _99 = require("99")
+vim.pack.add({ "gh:ThePrimeagen/99" })
 
+local _99 = require("99")
 -- For logging that is to a file if you wish to trace through requests
 -- for reporting bugs, i would not rely on this, but instead the provided
 -- logging mechanisms within 99.  This is for more debugging purposes

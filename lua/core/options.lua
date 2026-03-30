@@ -9,7 +9,7 @@ local options = {
 	-- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
 	cmdheight = 1, -- more space in the neovim command line for displaying messages
 	completeopt = { "menu", "menuone", "noselect", "preview", "fuzzy" }, -- mostly just for cmp
-	shortmess = { I = true, c = true }, -- don't give |ins-completion-menu| messages
+	shortmess = { c = true }, -- don't give |ins-completion-menu| messages
 	conceallevel = 2, -- so that `` is visible in markdown files
 	encoding = "utf-8", -- set encoding
 	fileencoding = "utf-8", -- the encoding written to a file
@@ -67,7 +67,7 @@ local options = {
 
 	spell = true,
 	spelllang = { "en_us" },
-	statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %y %c-%l/%L    %P",
+	-- statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %y %c-%l/%L    %P",
 }
 vim.opt.rtp:append("~/projects/exec.nvim")
 -- undotree settings

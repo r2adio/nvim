@@ -1,3 +1,5 @@
+vim.pack.add({ "gh:ibhagwan/fzf-lua" })
+
 require("fzf-lua").setup({
 	winopts = {
 		height = 0.45, -- window height

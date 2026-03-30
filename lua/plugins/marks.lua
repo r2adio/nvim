@@ -1,3 +1,5 @@
+vim.pack.add({ "gh:chentoast/marks.nvim" })
+
 require("marks").setup({
 	-- whether to map keybinds or not. default true
 	default_mappings = true,

@@ -1,3 +1,5 @@
+vim.pack.add({ "gh:nvim-orgmode/orgmode" })
+
 local LinkPingType = {}
 function LinkPingType:get_name()
 	return "ping"

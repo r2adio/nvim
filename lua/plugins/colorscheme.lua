@@ -1,3 +1,4 @@
+vim.pack.add({ "gh:rose-pine/neovim" })
 -- vim.cmd("colorscheme retrobox")
 
 require("rose-pine").setup({

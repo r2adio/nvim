@@ -1,5 +1,6 @@
-local dap = require("dap")
+vim.pack.add({ "gh:mfussenegger/nvim-dap" })
 
+local dap = require("dap")
 dap.adapters.codelldb = {
 	type = "executable",
 	command = vim.fn.stdpath("data") .. "/mason/bin/codelldb",
