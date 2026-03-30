@@ -34,7 +34,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 }) -- auto-completion w/ vim.lsp.completion.enable
 
--- lsp inlay_hint
 vim.keymap.set("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "enable lsp inlay hints" })
+
+vim.lsp.config("*", {
+	capabilities = {
+		textDocument = {
+			foldingRange = { dynamicRegistration = false, lineFoldingOnly = true },
+			semanticTokens = { multilineTokenSupport = true },
+		},
+	},
+}) -- adding capabilities to vim.lsp
+
+vim.diagnostic.config({
+	-- virtual_lines = { current_line = true },
+	virtual_text = { current_line = true },
+	float = { border = "rounded" },
+	update_in_insert = false,
+	severity_sort = true,
+})

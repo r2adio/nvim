@@ -1,12 +1,7 @@
-vim.pack.add({ "gh:rose-pine/neovim" })
--- vim.cmd("colorscheme retrobox")
+vim.pack.add({ "gh:webhooked/kanso.nvim" })
 
-require("rose-pine").setup({
-	variant = "auto",
-	styles = {
-		bold = true,
-		italic = true,
-		transparency = true,
-	},
+require("kanso").setup({
+	colors = { palette = { zenBg0 = "#000000" } },
 })
-vim.cmd("colorscheme rose-pine-moon")
+
+vim.cmd("colorscheme kanso-zen")

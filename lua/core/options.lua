@@ -49,25 +49,6 @@ local options = {
 	-- grep options
 	grepprg = "rg --vimgrep --no-heading --smart-case --hidden --glob '!.git'",
 	grepformat = "%f:%l:%c:%m",
-
-	-- find options
-	path = vim.opt.path:append("**"),
-	wildmenu = true,
-	wildmode = "longest:full,full",
-	wildignorecase = true,
-	wildignore = vim.opt.wildignore:append({
-		"*/node_modules/*",
-		"*/dist/*",
-		"*/build/*",
-		"*/.git/*",
-		"*/.cache/*",
-		"*/.next/*",
-		"*.log",
-	}),
-
-	spell = true,
-	spelllang = { "en_us" },
-	-- statusline = "%{v:lua.git_branch()} %f %m%r%h%w %= %y %c-%l/%L    %P",
 }
 vim.opt.rtp:append("~/projects/exec.nvim")
 -- undotree settings
@@ -78,44 +59,20 @@ vim.g.undotree_SplitWidth = 44
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 1
 
--- gh.vim settings
-vim.g.gh_token = vim.fn.system("gh auth token"):gsub("%s+", "")
-
--- vim.opt.shortmess:append("c")
-
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
--- vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd("set whichwrap+=<,>,[,]")
-vim.cmd([[set iskeyword+=-]]) -- treat hyphens as part of a word
-
--- Change the Diagnostic symbols in the sign column (gutter)
-vim.diagnostic.config({
-	signs = {
-		text = {
-			-- [vim.diagnostic.severity.ERROR] = " ",
-			-- [vim.diagnostic.severity.WARN] = " ",
-			-- [vim.diagnostic.severity.HINT] = "󰠠 ",
-			-- [vim.diagnostic.severity.INFO] = " ",
-		},
-	},
+vim.opt.path:append("**")
+vim.opt.wildignore:append({
+	"*/node_modules/*",
+	"*/dist/*",
+	"*/build/*",
+	"*/.git/*",
+	"*/.cache/*",
+	"*/.next/*",
+	"*.log",
 })
 
-vim.diagnostic.config({
-	-- virtual_lines = { current_line = true },
-	virtual_text = { current_line = true },
-	float = { border = "rounded" },
-	update_in_insert = false,
-	severity_sort = true,
-})
-
-vim.lsp.config("*", {
-	capabilities = {
-		textDocument = {
-			foldingRange = { dynamicRegistration = false, lineFoldingOnly = true },
-			semanticTokens = { multilineTokenSupport = true },
-		},
-	},
-}) -- adding capabilities to vim.lsp
+vim.opt.whichwrap:append("<,>,[,]")
+vim.opt.iskeyword:append("-") -- treat hyphens as part of a word

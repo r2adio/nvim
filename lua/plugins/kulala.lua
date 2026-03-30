@@ -1,7 +1,3 @@
--- vim.pack.add({ { src = "gh:mistweaverco/kulala.nvim" } })
-vim.pack.add({ { src = "gh:mistweaverco/kulala.nvim", opts = { ft = "http" } } })
+vim.pack.add({ "gh:mistweaverco/kulala.nvim" })
 
-require("kulala").setup({
-	global_keymaps = true,
-	-- global_keymaps_prefix = "<leader>x",
-})
+require("kulala").setup({ global_keymaps = true })

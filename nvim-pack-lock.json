@@ -25,6 +25,10 @@
       "rev": "6f367b2ab8f9d4a0a23df2b703a3f91137618387",
       "src": "gh:ldelossa/gh.nvim"
     },
+    "kanso.nvim": {
+      "rev": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
+      "src": "gh:webhooked/kanso.nvim"
+    },
     "kulala.nvim": {
       "rev": "6656c9d332735ca6a27725e0fb45a1715c4372d9",
       "src": "gh:mistweaverco/kulala.nvim"
@@ -39,15 +43,11 @@
     },
     "mason-tool-installer.nvim": {
       "rev": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
-      "src": "gh:WhoIsSethDaniel/mason-tool-installer.nvim"
+      "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
-      "src": "gh:mason-org/mason.nvim"
-    },
-    "neovim": {
-      "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
-      "src": "gh:rose-pine/neovim"
+      "src": "https://github.com/mason-org/mason.nvim"
     },
     "nvim-colorizer.lua": {
       "rev": "a065833f35a3a7cc3ef137ac88b5381da2ba302e",
