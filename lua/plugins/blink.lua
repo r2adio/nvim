@@ -27,7 +27,7 @@ require("blink.cmp").setup({
 	appearance = { nerd_font_variant = "mono" },
 
 	completion = {
-		ghost_text = { enabled = true, show_with_selection = true },
+		-- ghost_text = { enabled = true, show_with_selection = true },
 		keyword = { range = "full" },
 		documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		menu = {

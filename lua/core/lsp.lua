@@ -17,8 +17,7 @@ vim.lsp.enable({
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
 		local client = vim.lsp.get_client_by_id(ev.data.client_id)
-		-- nil check for client
-		if not client then
+		if not client then -- nil check for client
 			return
 		end
 		-- check if blink.cmp or nvim-cmp is loaded
@@ -33,6 +32,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 }) -- auto-completion w/ vim.lsp.completion.enable
+
+vim.lsp.codelens.enable() -- do enable in lsp configs
+vim.lsp.document_color.enable(true, nil, { style = "virtual" }) -- enable color with tailwind lsp
+
+-- NOTE: need copilot lsp for it
+-- vim.lsp.inline_completion.enable()
+-- vim.keymap.set("i", "<M-.>", function()
+-- 	if not vim.lsp.inline_completion.get() then
+-- 		return "<M-.>"
+-- 	end
+-- end, { desc = "accept the current inline completion" })
 
 vim.keymap.set("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())

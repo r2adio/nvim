@@ -8,6 +8,7 @@ return {
 	},
 	settings = {
 		Lua = {
+			codeLens = { enable = true },
 			hint = {
 				enable = true, -- enable inlay hints
 				arrayIndex = "Enable", -- show hints for array indices
