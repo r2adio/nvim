@@ -85,10 +85,6 @@
     "vim-gitgutter": {
       "rev": "55b368d4c68541775b4b253d3c98d3145b695c24",
       "src": "gh:airblade/vim-gitgutter"
-    },
-    "vim-rhubarb": {
-      "rev": "5496d7c94581c4c9ad7430357449bb57fc59f501",
-      "src": "gh:tpope/vim-rhubarb"
     }
   }
 }

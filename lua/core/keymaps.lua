@@ -53,9 +53,6 @@ keymap("i", "<C-l>", "<Del>")
 -- kulala.nvim
 keymap("n", "<leader>x", ":lua require('kulala').", { silent = true, desc = "Open Kulala" })
 
--- undotree
-keymap("n", "<leader>u", ":UndotreeToggle<cr>", { silent = true, desc = "Open UndoTree" })
-
 -- fugitive
 keymap("n", "gs", vim.cmd.Git)
 local autocmd = vim.api.nvim_create_autocmd

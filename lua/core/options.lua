@@ -1,11 +1,11 @@
 vim.o.nu = true -- enable line numbers
 vim.o.relativenumber = true -- relative line numbers
--- list = true, -- Show some invisible characters (tabs...)
 vim.o.backup = false -- creates a backup file
--- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+-- vim.o.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.o.cmdheight = 1 -- more space in the neovim command line for displaying messages
--- vim.o.completeopt = { "menu", "menuone", "noselect", "preview", "fuzzy" } -- mostly just for cmp
--- vim.o.shortmess = { c = true } -- don't give |ins-completion-menu| messages
+-- vim.o.autocomplete = true
+vim.opt.completeopt = { "menuone", "noinsert", "noselect", "popup", "fuzzy" } -- mostly just for cmp
+vim.opt.shortmess:append("c")
 vim.o.conceallevel = 2 -- so that `` is visible in markdown files
 vim.o.encoding = "utf-8" -- set encoding
 vim.o.fileencoding = "utf-8" -- the encoding written to a file
@@ -18,8 +18,8 @@ vim.o.showmode = true -- we don't need to see things like -- INSERT -- anymore
 vim.o.showtabline = 1 -- always show tabs
 vim.o.smartcase = true -- smart case
 vim.o.smartindent = true -- make indenting smarter again
--- splitbelow = true -- force all horizontal splits to go below current window
--- splitright = true -- force all vertical splits to go to the right of current window
+-- vim.o.splitbelow = true -- force all horizontal splits to go below current window
+-- vim.o.splitright = true -- force all vertical splits to go to the right of current window
 vim.o.swapfile = false -- creates a swapfile
 vim.o.termguicolors = true -- set term gui colors (most terminals support this)
 vim.o.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
@@ -37,7 +37,6 @@ vim.o.wrap = true -- display lines as one long line
 vim.o.linebreak = true --wraps lines at word boundaries
 vim.o.scrolloff = 8 -- will always keep 8 lines of context
 vim.o.sidescrolloff = 8
--- guifont = "JetBrainsMono Nerd Font:h17" -- the font used in graphical neovim applications
 vim.o.guicursor = ""
 vim.o.colorcolumn = "100"
 vim.o.winborder = "rounded"
@@ -45,12 +44,11 @@ vim.o.winborder = "rounded"
 -- grep options
 vim.o.grepprg = "rg --vimgrep --no-heading --smart-case --hidden --glob '!.git'"
 vim.o.grepformat = "%f:%l:%c:%m"
--- }
+
 require("vim._core.ui2").enable({}) -- enables ui2 (exp in v0.12)
 vim.opt.rtp:append("~/projects/exec.nvim")
--- undotree settings
-vim.g.undotree_WindowLayout = 4
-vim.g.undotree_SplitWidth = 44
+
+vim.cmd("packadd nvim.undotree") -- enable default undotree plugin
 
 -- netrw settings
 vim.g.netrw_banner = 0
