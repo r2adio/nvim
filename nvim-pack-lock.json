@@ -43,15 +43,11 @@
     },
     "mason-tool-installer.nvim": {
       "rev": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
-      "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+      "src": "gh:WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
-      "src": "https://github.com/mason-org/mason.nvim"
-    },
-    "nvim-colorizer.lua": {
-      "rev": "a065833f35a3a7cc3ef137ac88b5381da2ba302e",
-      "src": "gh:norcalli/nvim-colorizer.lua"
+      "src": "gh:mason-org/mason.nvim"
     },
     "nvim-dap": {
       "rev": "4f5deb110d9ff8994d96c21df95e2271d11214f9",
@@ -73,10 +69,6 @@
     "orgmode": {
       "rev": "2fc30d36fd1c3e6086a7424858e19a52a29ae937",
       "src": "gh:nvim-orgmode/orgmode"
-    },
-    "undotree": {
-      "rev": "6fa6b57cda8459e1e4b2ca34df702f55242f4e4d",
-      "src": "gh:mbbill/undotree"
     },
     "vim-dadbod": {
       "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",

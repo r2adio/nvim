@@ -1,55 +1,52 @@
--- vim.g.python3_host_prog = os.getenv("HOME") .. ".pyenv/versions/3.12.3/bin/python" -- python code environment
+vim.o.nu = true -- enable line numbers
+vim.o.relativenumber = true -- relative line numbers
+-- list = true, -- Show some invisible characters (tabs...)
+vim.o.backup = false -- creates a backup file
+-- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+vim.o.cmdheight = 1 -- more space in the neovim command line for displaying messages
+-- vim.o.completeopt = { "menu", "menuone", "noselect", "preview", "fuzzy" } -- mostly just for cmp
+-- vim.o.shortmess = { c = true } -- don't give |ins-completion-menu| messages
+vim.o.conceallevel = 2 -- so that `` is visible in markdown files
+vim.o.encoding = "utf-8" -- set encoding
+vim.o.fileencoding = "utf-8" -- the encoding written to a file
+vim.o.hlsearch = true -- highlight all matches on previous search pattern
+vim.o.incsearch = true -- show search results as you type
+vim.o.ignorecase = true -- ignore case in search patterns
+vim.o.mouse = "" -- allow the mouse to be used in neovim
+vim.o.pumheight = 10 -- pop up menu height
+vim.o.showmode = true -- we don't need to see things like -- INSERT -- anymore
+vim.o.showtabline = 1 -- always show tabs
+vim.o.smartcase = true -- smart case
+vim.o.smartindent = true -- make indenting smarter again
+-- splitbelow = true -- force all horizontal splits to go below current window
+-- splitright = true -- force all vertical splits to go to the right of current window
+vim.o.swapfile = false -- creates a swapfile
+vim.o.termguicolors = true -- set term gui colors (most terminals support this)
+vim.o.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.o.undofile = true -- enable persistent undo
+vim.o.updatetime = 300 -- faster completion (4000ms default)
+vim.o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+vim.o.expandtab = true -- convert tabs to spaces
+vim.o.shiftwidth = 2 -- the number of spaces inserted for each indentation
+vim.o.softtabstop = 2 -- Number of spaces that a <Tab> counts for while editing
+vim.o.tabstop = 2 -- insert 2 spaces for a tab
+vim.o.cursorline = true -- highlight the current line
+vim.o.numberwidth = 2 -- set number column width to 2 {default 4}
+vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
+vim.o.wrap = true -- display lines as one long line
+vim.o.linebreak = true --wraps lines at word boundaries
+vim.o.scrolloff = 8 -- will always keep 8 lines of context
+vim.o.sidescrolloff = 8
+-- guifont = "JetBrainsMono Nerd Font:h17" -- the font used in graphical neovim applications
+vim.o.guicursor = ""
+vim.o.colorcolumn = "100"
+vim.o.winborder = "rounded"
 
-local options = {
-	-- :help options
-	nu = true, -- enable line numbers
-	relativenumber = true, -- relative line numbers
-	-- list = true, -- Show some invisible characters (tabs...)
-	backup = false, -- creates a backup file
-	-- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-	cmdheight = 1, -- more space in the neovim command line for displaying messages
-	completeopt = { "menu", "menuone", "noselect", "preview", "fuzzy" }, -- mostly just for cmp
-	shortmess = { c = true }, -- don't give |ins-completion-menu| messages
-	conceallevel = 2, -- so that `` is visible in markdown files
-	encoding = "utf-8", -- set encoding
-	fileencoding = "utf-8", -- the encoding written to a file
-	hlsearch = true, -- highlight all matches on previous search pattern
-	incsearch = true, -- show search results as you type
-	ignorecase = true, -- ignore case in search patterns
-	mouse = "", -- allow the mouse to be used in neovim
-	pumheight = 10, -- pop up menu height
-	showmode = true, -- we don't need to see things like -- INSERT -- anymore
-	showtabline = 1, -- always show tabs
-	smartcase = true, -- smart case
-	smartindent = true, -- make indenting smarter again
-	-- splitbelow = true, -- force all horizontal splits to go below current window
-	-- splitright = true, -- force all vertical splits to go to the right of current window
-	swapfile = false, -- creates a swapfile
-	termguicolors = true, -- set term gui colors (most terminals support this)
-	timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
-	undofile = true, -- enable persistent undo
-	updatetime = 300, -- faster completion (4000ms default)
-	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-	expandtab = true, -- convert tabs to spaces
-	shiftwidth = 2, -- the number of spaces inserted for each indentation
-	softtabstop = 2, -- Number of spaces that a <Tab> counts for while editing
-	tabstop = 2, -- insert 2 spaces for a tab
-	cursorline = true, -- highlight the current line
-	numberwidth = 2, -- set number column width to 2 {default 4}
-	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-	wrap = true, -- display lines as one long line
-	linebreak = true, --wraps lines at word boundaries
-	scrolloff = 8, -- will always keep 8 lines of context
-	sidescrolloff = 8,
-	-- guifont = "JetBrainsMono Nerd Font:h17", -- the font used in graphical neovim applications
-	guicursor = "",
-	colorcolumn = "100",
-	winborder = "rounded",
-
-	-- grep options
-	grepprg = "rg --vimgrep --no-heading --smart-case --hidden --glob '!.git'",
-	grepformat = "%f:%l:%c:%m",
-}
+-- grep options
+vim.o.grepprg = "rg --vimgrep --no-heading --smart-case --hidden --glob '!.git'"
+vim.o.grepformat = "%f:%l:%c:%m"
+-- }
+require("vim._core.ui2").enable({}) -- enables ui2 (exp in v0.12)
 vim.opt.rtp:append("~/projects/exec.nvim")
 -- undotree settings
 vim.g.undotree_WindowLayout = 4
@@ -58,10 +55,6 @@ vim.g.undotree_SplitWidth = 44
 -- netrw settings
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 1
-
-for k, v in pairs(options) do
-	vim.opt[k] = v
-end
 
 vim.opt.path:append("**")
 vim.opt.wildignore:append({
