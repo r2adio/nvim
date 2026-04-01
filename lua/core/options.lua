@@ -106,3 +106,35 @@ vim.opt.wildignore:append({
 
 vim.opt.whichwrap:append("<,>,[,]")
 vim.opt.iskeyword:append("-") -- treat hyphens as part of a word
+
+-- --- wraps message with tmux prefix so that the underlying terminal can interpret it correctly
+-- --- needs 'set-option -g allow-passthrough on' in tmux config
+-- ---@param content string
+-- ---@return string
+-- local function wrap_tmux(content)
+-- 	return string.format("\27Ptmux;\27%s\27\\", content)
+-- end
+-- local original_ui_send = vim.api.nvim_ui_send
+-- ---@diagnostic disable-next-line: duplicate-set-field
+-- vim.api.nvim_ui_send = function(content)
+-- 	-- wrap in TMUX passthrough if needed
+-- 	if os.getenv("TMUX") then
+-- 		content = wrap_tmux(content)
+-- 	end
+-- 	original_ui_send(content)
+-- end
+
+vim.api.nvim_create_autocmd("LspProgress", {
+	buffer = buf,
+	callback = function(ev)
+		local value = ev.data.params.value
+		vim.api.nvim_echo({ { value.message or "done" } }, false, {
+			id = "lsp." .. ev.data.client_id,
+			kind = "progress",
+			source = "vim.lsp",
+			title = value.title,
+			status = value.kind ~= "end" and "running" or "success",
+			percent = value.percentage,
+		})
+	end,
+})

@@ -62,7 +62,7 @@
       "src": "gh:mfussenegger/nvim-lint"
     },
     "nvim-treesitter": {
-      "rev": "6878ae017d691a0df1c49d8a091c88a33e4c2d50",
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "gh:nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
