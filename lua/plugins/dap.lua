@@ -1,4 +1,4 @@
-vim.pack.add({ "gh:mfussenegger/nvim-dap" })
+vim.pack.add({ "gh:mfussenegger/nvim-dap", "gh:igorlfs/nvim-dap-view" })
 
 local dap = require("dap")
 dap.adapters.codelldb = {

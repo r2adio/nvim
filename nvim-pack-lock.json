@@ -53,21 +53,25 @@
       "rev": "4f5deb110d9ff8994d96c21df95e2271d11214f9",
       "src": "gh:mfussenegger/nvim-dap"
     },
+    "nvim-dap-view": {
+      "rev": "af144cfbdeafd90dfdaa3d406e3f8e06ddc4f0e3",
+      "src": "gh:igorlfs/nvim-dap-view"
+    },
     "nvim-lint": {
       "rev": "4b03656c09c1561f89b6aa0665c15d292ba9499d",
       "src": "gh:mfussenegger/nvim-lint"
     },
     "nvim-treesitter": {
-      "rev": "7caec274fd19c12b55902a5b795100d21531391f",
+      "rev": "6878ae017d691a0df1c49d8a091c88a33e4c2d50",
       "src": "gh:nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-treesitter-context": {
-      "rev": "adf4b6b0420b7be6c717ef0ac7993183d6c201b1",
+      "rev": "b0c45cefe2c8f7b55fc46f34e563bc428ef99636",
       "src": "gh:nvim-treesitter/nvim-treesitter-context"
     },
     "orgmode": {
-      "rev": "2fc30d36fd1c3e6086a7424858e19a52a29ae937",
+      "rev": "1ab7b456020de8bdaed7d8135b5376a0b4419b11",
       "src": "gh:nvim-orgmode/orgmode"
     },
     "vim-dadbod": {
