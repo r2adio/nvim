@@ -1,3 +1,4 @@
+require("plugins.typr")
 require("plugins.colorscheme")
 require("plugins.picker")
 require("plugins.mason")

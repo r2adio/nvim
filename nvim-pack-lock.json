@@ -5,29 +5,33 @@
       "src": "gh:ThePrimeagen/99"
     },
     "blink.cmp": {
-      "rev": "451168851e8e2466bc97ee3e026c3dcb9141ce07",
-      "src": "https://github.com/Saghen/blink.cmp",
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "gh:Saghen/blink.cmp",
       "version": ">=0.0.0"
     },
     "conform.nvim": {
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "gh:stevearc/conform.nvim"
     },
+    "exec.nvim": {
+      "rev": "57fdfda60e6c8ce0baa11e53ca3b5883df77704b",
+      "src": "file:///Users/ritikh/projects/exec.nvim"
+    },
     "friendly-snippets": {
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "gh:rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "c9e7b7bfbd01f949164988ee1684035468e1995c",
+      "rev": "1e866cce085cc6df3d3e4fb59f00105fa84cef6c",
       "src": "gh:ibhagwan/fzf-lua"
     },
     "gh.nvim": {
       "rev": "6f367b2ab8f9d4a0a23df2b703a3f91137618387",
       "src": "gh:ldelossa/gh.nvim"
     },
-    "kanso.nvim": {
-      "rev": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
-      "src": "gh:webhooked/kanso.nvim"
+    "gruvbox-material": {
+      "rev": "afb275d8e6dc379762d122bd24e1773fc057abf3",
+      "src": "gh:sainnhe/gruvbox-material"
     },
     "kulala.nvim": {
       "rev": "6656c9d332735ca6a27725e0fb45a1715c4372d9",
@@ -46,19 +50,19 @@
       "src": "gh:WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
-      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
+      "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
       "src": "gh:mason-org/mason.nvim"
     },
     "nvim-dap": {
-      "rev": "4f5deb110d9ff8994d96c21df95e2271d11214f9",
+      "rev": "45a69eba683a2c448dd9ecfc4de89511f0646b5f",
       "src": "gh:mfussenegger/nvim-dap"
     },
     "nvim-dap-view": {
-      "rev": "af144cfbdeafd90dfdaa3d406e3f8e06ddc4f0e3",
+      "rev": "1dd4ba2307245ca9517a4b9d99f3bf80830e4397",
       "src": "gh:igorlfs/nvim-dap-view"
     },
     "nvim-lint": {
-      "rev": "4b03656c09c1561f89b6aa0665c15d292ba9499d",
+      "rev": "eab58b48eb11d7745c11c505e0f3057165902461",
       "src": "gh:mfussenegger/nvim-lint"
     },
     "nvim-treesitter": {
@@ -71,8 +75,12 @@
       "src": "gh:nvim-treesitter/nvim-treesitter-context"
     },
     "orgmode": {
-      "rev": "1ab7b456020de8bdaed7d8135b5376a0b4419b11",
+      "rev": "3fb33c6e2dd90891474f8955711b9e76619392b7",
       "src": "gh:nvim-orgmode/orgmode"
+    },
+    "typr": {
+      "rev": "584e4ef34dea25a4035627794322f315b22d1253",
+      "src": "gh:nvzone/typr"
     },
     "vim-dadbod": {
       "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
@@ -87,8 +95,12 @@
       "src": "gh:tpope/vim-fugitive"
     },
     "vim-gitgutter": {
-      "rev": "55b368d4c68541775b4b253d3c98d3145b695c24",
+      "rev": "21c977e8597c468c7dc76001389b0b430d46a4b0",
       "src": "gh:airblade/vim-gitgutter"
+    },
+    "volt": {
+      "rev": "620de1321f275ec9d80028c68d1b88b409c0c8b1",
+      "src": "gh:nvzone/volt"
     }
   }
 }
