@@ -83,11 +83,38 @@ require("vim._core.ui2").enable({
 		pager = { height = 0.5 },
 	},
 }) -- enables ui2 (exp in v0.12)
-vim.opt.rtp:append("~/projects/exec.nvim")
 
 vim.cmd.packadd("cfilter")
 vim.cmd.packadd("nvim.difftool")
 vim.cmd.packadd("nvim.undotree") -- enable default undotree plugin
+
+-- statusline
+local modes = {
+	["n"] = "[NORMAL]",
+	["no"] = "[NORMAL]",
+	["v"] = "[VISUAL]",
+	["V"] = "[VISUAL LINE]",
+	[" "] = "[VISUAL BLOCK]", -- CTRL-V
+	["s"] = "[SELECT]",
+	["S"] = "[SELECT LINE]",
+	["i"] = "[INSERT]",
+	["ic"] = "[INSERT]",
+	["R"] = "[REPLACE]",
+	["Rv"] = "[VISUAL REPLACE]",
+	["c"] = "[COMMAND]",
+	["cv"] = "[VIM EX]",
+	["ce"] = "[EX]",
+	["r"] = "[PROMPT]",
+	["rm"] = "[MORE]",
+	["r?"] = "[CONFIRM]",
+	["!"] = "[SHELL]",
+	["t"] = "[TERMINAL]",
+}
+function _G.mode()
+	local current_mode = vim.api.nvim_get_mode().mode
+	return string.format(" %s ", modes[current_mode] or current_mode)
+end
+vim.opt.statusline = "%{v:lua.mode()}" .. vim.opt.statusline:get()
 
 -- netrw settings
 vim.g.netrw_banner = 0
@@ -123,18 +150,3 @@ vim.opt.iskeyword:append("-") -- treat hyphens as part of a word
 -- 	end
 -- 	original_ui_send(content)
 -- end
-
-vim.api.nvim_create_autocmd("LspProgress", {
-	buffer = buf,
-	callback = function(ev)
-		local value = ev.data.params.value
-		vim.api.nvim_echo({ { value.message or "done" } }, false, {
-			id = "lsp." .. ev.data.client_id,
-			kind = "progress",
-			source = "vim.lsp",
-			title = value.title,
-			status = value.kind ~= "end" and "running" or "success",
-			percent = value.percentage,
-		})
-	end,
-})

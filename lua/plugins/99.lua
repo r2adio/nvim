@@ -8,7 +8,7 @@ local cwd = vim.uv.cwd()
 local basename = vim.fs.basename(cwd)
 _99.setup({
 	provider = _99.Providers.OpenCodeProvider, -- default: OpenCodeProvider
-	model = "github-copilot/claude-sonnet-4.5",
+	model = "github-copilot/gpt-5.3-codex",
 
 	logger = {
 		level = _99.DEBUG,

@@ -1,13 +1,13 @@
 vim.lsp.enable({
 	"clangd",
 	"gopls",
-	"templ",
+	-- "templ",
 	"rust_analyzer",
 	"zls",
 	"lua_ls",
 	"pyright",
 	"ruff",
-	"mesonlsp",
+	-- "mesonlsp",
 	"ts_ls",
 	"tailwind",
 	"emmet_ls",
@@ -64,3 +64,18 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	severity_sort = true,
 })
+
+-- vim.api.nvim_create_autocmd("LspProgress", {
+-- 	buffer = buf,
+-- 	callback = function(ev)
+-- 		local value = ev.data.params.value
+-- 		vim.api.nvim_echo({ { value.message or "done" } }, false, {
+-- 			id = "lsp." .. ev.data.client_id,
+-- 			kind = "progress",
+-- 			source = "vim.lsp",
+-- 			title = value.title,
+-- 			status = value.kind ~= "end" and "running" or "success",
+-- 			percent = value.percentage,
+-- 		})
+-- 	end,
+-- })

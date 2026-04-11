@@ -15,9 +15,7 @@ mason_tool_installer.setup({
 	ensure_installed = {
 		-- LSPs
 		"clangd",
-		"mesonlsp",
-		-- "html",
-		-- "cssls",
+		"astro-language-server",
 		"tailwindcss-language-server",
 		"lua-language-server",
 		-- "graphql",
@@ -27,7 +25,7 @@ mason_tool_installer.setup({
 		"typescript-language-server",
 		"zls",
 		"gopls",
-		"templ",
+		-- "templ",
 		"eslint-lsp",
 
 		-- Formatters, Linters, DAPs
