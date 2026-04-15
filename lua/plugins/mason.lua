@@ -13,29 +13,30 @@ mason.setup({
 })
 mason_tool_installer.setup({
 	ensure_installed = {
-		-- LSPs
+		-- lsp:
 		"clangd",
 		"astro-language-server",
 		"tailwindcss-language-server",
 		"lua-language-server",
 		-- "graphql",
 		"emmet-language-server",
-		"prisma-language-server",
+		-- "prisma-language-server",
 		"pyright",
 		"typescript-language-server",
 		"zls",
 		"gopls",
 		-- "templ",
-		"eslint-lsp",
+		-- "eslint-lsp",
 
-		-- Formatters, Linters, DAPs
-		"prettier",
+		-- formatters, linters:
+		-- "prettier",
+		-- "eslint_d",
 		"stylua",
 		"ruff",
-		"eslint_d",
+		"biome",
 		"goimports",
 
-		-- debuggers
+		-- debuggers:
 		"codelldb",
 		"debugpy",
 	},

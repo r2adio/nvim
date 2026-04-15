@@ -3,7 +3,7 @@ vim.o.nu = true -- enable line numbers
 vim.o.relativenumber = true -- relative line numbers
 vim.o.backup = false -- creates a backup file
 -- vim.o.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-vim.o.cmdheight = 0 -- more space in the neovim command line for displaying messages
+vim.o.cmdheight = 1 -- more space in the neovim command line for displaying messages
 -- vim.o.autocomplete = true
 vim.opt.completeopt = { "menuone", "noinsert", "noselect", "popup", "fuzzy" } -- mostly just for cmp
 vim.opt.shortmess:append("c")
@@ -115,10 +115,6 @@ function _G.mode()
 	return string.format(" %s ", modes[current_mode] or current_mode)
 end
 vim.opt.statusline = "%{v:lua.mode()}" .. vim.opt.statusline:get()
-
--- netrw settings
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 1
 
 vim.opt.path:append("**")
 vim.opt.wildignore:append({

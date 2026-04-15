@@ -20,9 +20,9 @@ keymap("n", "<leader>Y", '"+Y', { noremap = true, silent = true })
 -- replace the all instances of word under the cursor
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
--- toggle netrw
-keymap("n", "<leader>.", "<cmd>Rexplore<cr>") -- reopen last netrew buffer
-keymap("n", "<leader><leader>", "<cmd>Explore %:p:h<cr>") -- open fresh netrew buffer at current file directory
+-- toggle oil
+keymap("n", "<leader>.", "<cmd>Oil .<cr>")
+keymap("n", "<leader><leader>", "<cmd>Oil<cr>")
 
 -- replace autopairs plugin
 local function auto_pairs(open, close)

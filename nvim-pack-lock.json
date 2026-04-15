@@ -25,10 +25,6 @@
       "rev": "1e866cce085cc6df3d3e4fb59f00105fa84cef6c",
       "src": "gh:ibhagwan/fzf-lua"
     },
-    "gh.nvim": {
-      "rev": "6f367b2ab8f9d4a0a23df2b703a3f91137618387",
-      "src": "gh:ldelossa/gh.nvim"
-    },
     "gruvbox-material": {
       "rev": "afb275d8e6dc379762d122bd24e1773fc057abf3",
       "src": "gh:sainnhe/gruvbox-material"
@@ -74,9 +70,21 @@
       "rev": "b0c45cefe2c8f7b55fc46f34e563bc428ef99636",
       "src": "gh:nvim-treesitter/nvim-treesitter-context"
     },
+    "octo.nvim": {
+      "rev": "19e7381c3487c94015fceaf8c35364e3ed44c4e0",
+      "src": "gh:pwntester/octo.nvim"
+    },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "gh:stevearc/oil.nvim"
+    },
     "orgmode": {
       "rev": "3fb33c6e2dd90891474f8955711b9e76619392b7",
       "src": "gh:nvim-orgmode/orgmode"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "gh:nvim-lua/plenary.nvim"
     },
     "typr": {
       "rev": "584e4ef34dea25a4035627794322f315b22d1253",
@@ -89,6 +97,10 @@
     "vim-dadbod-completion": {
       "rev": "a8dac0b3cf6132c80dc9b18bef36d4cf7a9e1fe6",
       "src": "gh:kristijanhusak/vim-dadbod-completion"
+    },
+    "vim-dirvish": {
+      "rev": "6be56227a4207c93cd8b607f52f567a1e13dddb1",
+      "src": "gh:justinmk/vim-dirvish"
     },
     "vim-fugitive": {
       "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",

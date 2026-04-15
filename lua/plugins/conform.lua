@@ -2,21 +2,21 @@ vim.pack.add({ "gh:stevearc/conform.nvim" })
 
 require("conform").setup({
 	formatters_by_ft = {
-		javascript = { "prettier" },
-		typescript = { "prettier" },
-		javascriptreact = { "prettier" },
-		typescriptreact = { "prettier" },
-		svelte = { "prettier" },
-		astro = { "prettier" },
-		css = { "prettier" },
-		html = { "prettier" },
-		json = { "prettier" },
+		javascript = { "biome" },
+		typescript = { "biome" },
+		javascriptreact = { "biome" },
+		typescriptreact = { "biome" },
+		svelte = { "biome" },
+		astro = { "biome" },
+		css = { "biome" },
+		html = { "biome" },
+		json = { "biome" },
 		-- golang = { "golines" },
 		go = { "goimports", "gofmt" },
 		yaml = { "prettier" },
-		markdown = { "prettier" },
-		graphql = { "prettier" },
-		liquid = { "prettier" },
+		markdown = { "biome" },
+		graphql = { "biome" },
+		liquid = { "biome" },
 		lua = { "stylua" },
 		python = {
 			--[["ruff_fix",]]

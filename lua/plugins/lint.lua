@@ -1,10 +1,10 @@
 vim.pack.add({ "gh:mfussenegger/nvim-lint" })
 
 require("lint").linters_by_ft = {
-	javascript = { "eslint_d" },
-	typescript = { "eslint_d" },
-	javascriptreact = { "eslint_d" },
-	typescriptreact = { "eslint_d" },
+	javascript = { "biomejs" },
+	typescript = { "biomejs" },
+	javascriptreact = { "biomejs" },
+	typescriptreact = { "biomejs" },
 	-- svelte = { "eslint_d" },
 	python = { "ruff" },
 	go = {}, -- disable linting for Go
