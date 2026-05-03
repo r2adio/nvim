@@ -8,7 +8,7 @@ local cwd = vim.uv.cwd()
 local basename = vim.fs.basename(cwd)
 _99.setup({
 	provider = _99.Providers.OpenCodeProvider, -- default: OpenCodeProvider
-	model = "github-copilot/gpt-5.3-codex",
+	model = "github-copilot/gpt-5.2-codex",
 
 	logger = {
 		level = _99.DEBUG,

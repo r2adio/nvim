@@ -1,6 +1,7 @@
 vim.pack.add({ "gh:ibhagwan/fzf-lua" })
 
 require("fzf-lua").setup({
+	-- ui_select = true,
 	winopts = {
 		height = 0.45, -- window height
 		width = 1.00, -- window width

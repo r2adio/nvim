@@ -8,4 +8,6 @@ vim.pack.add({ "gh:stevearc/oil.nvim" })
 require("oil").setup({
 	columns = { "permissions", "size", "mtime" },
 	view_options = { show_hidden = true },
+	delete_to_trash = true,
+	skip_confirm_for_simple_edits = true,
 })

@@ -39,7 +39,7 @@ vim.o.linebreak = true --wraps lines at word boundaries
 vim.o.scrolloff = 8 -- will always keep 8 lines of context
 vim.o.sidescrolloff = 8
 vim.o.guicursor = ""
-vim.o.colorcolumn = "100"
+vim.o.colorcolumn = "80"
 vim.o.winborder = "rounded"
 
 -- grep options

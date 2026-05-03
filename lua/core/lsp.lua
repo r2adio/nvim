@@ -44,6 +44,10 @@ vim.lsp.document_color.enable(true, nil, { style = "virtual" }) -- enable color 
 -- 	end
 -- end, { desc = "accept the current inline completion" })
 
+vim.keymap.set({ "n", "x" }, "grc", function()
+	vim.lsp.document_color.color_presentation()
+end)
+
 vim.keymap.set("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "enable lsp inlay hints" })
