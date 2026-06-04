@@ -1,5 +1,4 @@
 vim.o.nu = true -- enable line numbers
-
 vim.o.relativenumber = true -- relative line numbers
 vim.o.backup = false -- creates a backup file
 -- vim.o.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
@@ -87,6 +86,12 @@ require("vim._core.ui2").enable({
 vim.cmd.packadd("cfilter")
 vim.cmd.packadd("nvim.difftool")
 vim.cmd.packadd("nvim.undotree") -- enable default undotree plugin
+
+-- netrw plugin
+vim.g.netrw_hide = 0
+vim.g.netrw_liststyle = 1
+vim.g.netrw_winsize = 25
+vim.g.netrw_banner = 0
 
 -- statusline
 local modes = {

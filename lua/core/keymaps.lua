@@ -20,9 +20,9 @@ keymap("n", "<leader>Y", '"+Y', { noremap = true, silent = true })
 -- replace the all instances of word under the cursor
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
--- toggle oil
-keymap("n", "<leader>.", "<cmd>Oil .<cr>")
-keymap("n", "<leader><leader>", "<cmd>Oil<cr>")
+-- toggle netrw
+keymap("n", "<leader>.", "<cmd>Ex .<cr>")
+keymap("n", "<leader><leader>", "<cmd>Ex<cr>")
 
 -- replace autopairs plugin
 local function auto_pairs(open, close)

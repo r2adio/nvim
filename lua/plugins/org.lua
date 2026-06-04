@@ -25,7 +25,7 @@ function LinkPingType:autocomplete(link)
 end
 
 require("orgmode").setup({
-	org_agenda_files = { "~/org/**/*", "~/orgfiles/work.org", "~/orgfiles/personal.org" },
+	org_agenda_files = { "~/org/**/*", "~/org/work.org", "~/org/personal.org" },
 	org_default_notes_file = "~/org/todo.org",
 
 	hyperlinks = {

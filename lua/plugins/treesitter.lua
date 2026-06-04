@@ -86,9 +86,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- NOTE: The incremental_selection module was removed from main branch
--- Custom implementation:  ## TODO
-
 require("treesitter-context").setup({
 	enable = true,
 	multiwindow = false,
