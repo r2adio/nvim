@@ -77,3 +77,5 @@ autocmd("BufWinEnter", {
 	end,
 })
 keymap("n", "<leader>hU", "<cmd>G restore --staged %<cr>", opts)
+-- commands: search, visual, stop_all_requests, vibe, Extensions.Worker.set_work
+keymap("n", "<leader>99", ":lua require('99').", opts)

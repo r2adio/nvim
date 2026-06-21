@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "black-metal-theme-neovim": {
+      "rev": "d7ce1c4b9196b3b34e70ca4fa9af108bb4207818",
+      "src": "gh:metalelf0/black-metal-theme-neovim"
+    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "gh:Saghen/blink.cmp",
@@ -65,10 +69,6 @@
     "nvim-treesitter-textobjects": {
       "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
       "src": "gh:nvim-treesitter/nvim-treesitter-textobjects"
-    },
-    "octo.nvim": {
-      "rev": "7fed87415c401954f73401bbed0fd736b9611e7c",
-      "src": "gh:pwntester/octo.nvim"
     },
     "orgmode": {
       "rev": "5f7fbf738c500f6cdd15f0353e7fe2ad5e5f7a35",

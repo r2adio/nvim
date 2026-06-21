@@ -8,7 +8,8 @@ local cwd = vim.uv.cwd()
 local basename = vim.fs.basename(cwd)
 _99.setup({
 	provider = _99.Providers.OpenCodeProvider, -- default: OpenCodeProvider
-	model = "github-copilot/gpt-5.2-codex",
+	-- model = "opencode/big-pickle",
+	model = "github-copilot/gpt-5.3-codex",
 
 	logger = {
 		level = _99.DEBUG,
@@ -75,6 +76,3 @@ _99.setup({
 		"AGENT.md",
 	},
 })
-
--- commands: search, visual, stop_all_requests, vibe, Extensions.Worker.set_work
-vim.keymap.set("n", "<leader>99", ":lua require('99').")

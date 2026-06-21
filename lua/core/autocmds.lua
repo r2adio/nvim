@@ -46,3 +46,22 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_win_set_width(0, 40)
 	end,
 }) -- builtin undotree plugin
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		local groups = {
+			"DiagnosticUnderlineError",
+			"DiagnosticUnderlineWarn",
+			"DiagnosticUnderlineInfo",
+			"DiagnosticUnderlineHint",
+			"DiagnosticUnderlineOk",
+		}
+		for _, group in ipairs(groups) do
+			local hl = vim.api.nvim_get_hl(0, { name = group })
+			vim.api.nvim_set_hl(0, group, {
+				sp = hl.sp,
+				undercurl = true,
+			})
+		end
+	end,
+}) -- undercurl over underline for diagnostic lines
