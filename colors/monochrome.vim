@@ -83,3 +83,47 @@ hi DiffAdd         guifg=#00CC00    guibg=#000000    ctermfg=white    ctermbg=bl
 hi Number          guifg=#FFFFFF    guibg=#000000    ctermfg=white    ctermbg=black    gui=NONE         cterm=NONE
 hi Pmenu           guifg=#FFFFFF    guibg=#000000    ctermfg=white    ctermbg=black    gui=BOLD         cterm=BOLD
 hi String          guifg=#FFFFFF    guibg=#000000    ctermfg=white    ctermbg=black    gui=NONE         cterm=NONE
+
+"" transparency support (set g:monochrome_transparent=1 to enable)
+let g:monochrome_transparent = get(g:, "monochrome_transparent", 0)
+if g:monochrome_transparent
+  hi Normal          guibg=NONE      ctermbg=NONE
+  "hi ColorColumn     guibg=NONE      ctermbg=NONE
+  hi CursorLine      guibg=NONE      ctermbg=NONE
+  hi LineNr          guibg=NONE      ctermbg=NONE
+  hi SignColumn      guibg=NONE      ctermbg=NONE
+  hi Folded          guibg=NONE      ctermbg=NONE
+  hi FoldColumn      guibg=NONE      ctermbg=NONE
+  hi VertSplit       guibg=NONE      ctermbg=NONE
+  hi StatusLine      guibg=NONE      ctermbg=NONE
+  hi StatusLineNC    guibg=NONE      ctermbg=NONE
+  hi TabLine         guibg=NONE      ctermbg=NONE
+  hi TabLineFill     guibg=NONE      ctermbg=NONE
+  hi TabLineSel      guibg=NONE      ctermbg=NONE
+  hi Pmenu           guibg=NONE      ctermbg=NONE
+  hi PmenuSbar       guibg=NONE      ctermbg=NONE
+  hi PmenuSel        guibg=NONE      ctermbg=NONE
+  hi PmenuThumb      guibg=NONE      ctermbg=NONE
+  hi NonText         guibg=NONE      ctermbg=NONE
+  hi CursorColumn    guibg=NONE      ctermbg=NONE
+  hi CursorLineNr    guibg=NONE      ctermbg=NONE
+  hi MatchParen      guibg=NONE      ctermbg=NONE
+  hi Directory       guibg=NONE      ctermbg=NONE
+  hi DiffAdd         guibg=NONE      ctermbg=NONE
+  hi DiffChange      guibg=NONE      ctermbg=NONE
+  hi DiffDelete      guibg=NONE      ctermbg=NONE
+  hi DiffText        guibg=NONE      ctermbg=NONE
+  hi SpecialKey      guibg=NONE      ctermbg=NONE
+  hi Error           guibg=NONE      ctermbg=NONE
+  "hi WarningMsg      guibg=NONE      ctermbg=NONE
+  hi WildMenu        guibg=NONE      ctermbg=NONE
+  hi Title           guibg=NONE      ctermbg=NONE
+  hi ModeMsg         guibg=NONE      ctermbg=NONE
+  hi MoreMsg         guibg=NONE      ctermbg=NONE
+  hi Question        guibg=NONE      ctermbg=NONE
+  hi Todo            guibg=NONE      ctermbg=NONE
+  "hi Search          guibg=NONE      ctermbg=NONE
+  "hi IncSearch       guibg=NONE      ctermbg=NONE
+  "hi Visual          guibg=NONE      ctermbg=NONE
+  "hi VisualNOS       guibg=NONE      ctermbg=NONE
+endif
