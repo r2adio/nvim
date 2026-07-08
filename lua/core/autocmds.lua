@@ -65,3 +65,15 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		end
 	end,
 }) -- undercurl over underline for diagnostic lines
+
+vim.api.nvim_create_augroup("AutoCreateDirs", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = "AutoCreateDirs",
+	pattern = "*",
+	callback = function(ctx)
+		local dir = vim.fn.fnamemodify(ctx.file, ":h")
+		if vim.fn.isdirectory(dir) == 0 then
+			vim.fn.mkdir(dir, "p")
+		end
+	end,
+})

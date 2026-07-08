@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "black-metal-theme-neovim": {
-      "rev": "d7ce1c4b9196b3b34e70ca4fa9af108bb4207818",
-      "src": "gh:metalelf0/black-metal-theme-neovim"
-    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "gh:Saghen/blink.cmp",
@@ -44,6 +40,10 @@
     "mason.nvim": {
       "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
       "src": "gh:mason-org/mason.nvim"
+    },
+    "monochrome.nvim": {
+      "rev": "2de78d9688ea4a177bcd9be554ab9192337d35ff",
+      "src": "gh:kdheepak/monochrome.nvim"
     },
     "nvim-dap": {
       "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
@@ -86,6 +86,10 @@
       "rev": "a8dac0b3cf6132c80dc9b18bef36d4cf7a9e1fe6",
       "src": "gh:kristijanhusak/vim-dadbod-completion"
     },
+    "vim-dirvish": {
+      "rev": "4cbf39ce024c57f700c4d5502cc172ea91d69360",
+      "src": "gh:justinmk/vim-dirvish"
+    },
     "vim-fugitive": {
       "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
       "src": "gh:tpope/vim-fugitive"
@@ -93,6 +97,10 @@
     "vim-gitgutter": {
       "rev": "21c977e8597c468c7dc76001389b0b430d46a4b0",
       "src": "gh:airblade/vim-gitgutter"
+    },
+    "vim-surround": {
+      "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
+      "src": "gh:tpope/vim-surround"
     }
   }
 }

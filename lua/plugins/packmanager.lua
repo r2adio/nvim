@@ -102,7 +102,7 @@ local function run_pack_manager(only_non_active)
 	})
 end
 
-vim.api.nvim_create_user_command("Pack", function()
+vim.api.nvim_create_user_command("PackManager", function()
 	run_pack_manager(false)
 end, {})
 vim.api.nvim_create_user_command("PackNonActive", function()

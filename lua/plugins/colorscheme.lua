@@ -16,6 +16,4 @@
 -- require("rose-pine").setup({ styles = { transparency = true } })
 -- vim.cmd.colorscheme("rose-pine")
 
-vim.pack.add({ "gh:metalelf0/black-metal-theme-neovim" })
-require("black-metal").setup({ theme = "marduk", transparent = true })
-require("black-metal").load()
+vim.cmd.colorscheme("monochrome")

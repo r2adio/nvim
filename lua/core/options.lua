@@ -30,16 +30,17 @@ vim.o.expandtab = true -- convert tabs to spaces
 vim.o.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.o.softtabstop = 2 -- Number of spaces that a <Tab> counts for while editing
 vim.o.tabstop = 2 -- insert 2 spaces for a tab
-vim.o.cursorline = true -- highlight the current line
+vim.o.cursorline = false -- highlight the current line
 vim.o.numberwidth = 2 -- set number column width to 2 {default 4}
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.o.wrap = true -- display lines as one long line
 vim.o.linebreak = true --wraps lines at word boundaries
-vim.o.scrolloff = 8 -- will always keep 8 lines of context
+vim.o.scrolloff = math.floor(vim.o.lines / 2) - 7 -- will always keep 8 lines of context
 vim.o.sidescrolloff = 8
 vim.o.guicursor = ""
 vim.o.colorcolumn = "80"
 vim.o.winborder = "rounded"
+vim.opt.exrc = true
 
 -- grep options
 vim.o.grepprg = "rg --vimgrep --no-heading --smart-case --hidden --glob '!.git'"
@@ -83,12 +84,12 @@ require("vim._core.ui2").enable({
 	},
 }) -- enables ui2 (exp in v0.12)
 
-vim.cmd.packadd("cfilter")
-vim.cmd.packadd("nvim.difftool")
-vim.cmd.packadd("nvim.undotree") -- enable default undotree plugin
+vim.cmd("packadd cfilter")
+vim.cmd("packadd nvim.difftool")
+vim.cmd("packadd nvim.undotree") -- enable default undotree plugin
 
 -- netrw plugin
-vim.g.netrw_hide = 0
+vim.g.netrw_hide = 1
 vim.g.netrw_liststyle = 1
 vim.g.netrw_winsize = 25
 vim.g.netrw_banner = 0

@@ -11,9 +11,7 @@ return {
 	cmd = { "astro-ls", "--stdio" },
 	filetypes = { "astro" },
 	root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
-	init_options = {
-		typescript = {},
-	},
+	init_options = { typescript = {} },
 	before_init = function(_, config)
 		local tsdk = get_typescript_server_path(config.root_dir)
 		if not tsdk then

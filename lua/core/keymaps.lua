@@ -21,8 +21,8 @@ keymap("n", "<leader>Y", '"+Y', { noremap = true, silent = true })
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- toggle netrw
-keymap("n", "<leader>.", "<cmd>Ex .<cr>")
-keymap("n", "<leader><leader>", "<cmd>Ex<cr>")
+-- keymap("n", "<leader>.", "<cmd>Dirvish .<cr>")
+keymap("n", "<leader><leader>", "<cmd>Dirvish .<cr>")
 
 -- replace autopairs plugin
 local function auto_pairs(open, close)
@@ -77,5 +77,3 @@ autocmd("BufWinEnter", {
 	end,
 })
 keymap("n", "<leader>hU", "<cmd>G restore --staged %<cr>", opts)
--- commands: search, visual, stop_all_requests, vibe, Extensions.Worker.set_work
-keymap("n", "<leader>99", ":lua require('99').", opts)
