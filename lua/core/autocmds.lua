@@ -17,11 +17,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 }) -- return to last edit position when opening files
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = { "aerospace.toml" },
-	command = "!aerospace reload-config",
-}) -- reload aerospace config
-
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	pattern = { "*.js", "*.html", "*.css", "*.lua", "*.md" },
 	callback = function()

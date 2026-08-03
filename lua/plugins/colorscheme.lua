@@ -16,5 +16,5 @@
 -- require("rose-pine").setup({ styles = { transparency = true } })
 -- vim.cmd.colorscheme("rose-pine")
 
-vim.g.monochrome_transparent = 1
-vim.cmd.colorscheme("monochrome")
+vim.g.monotone_transparent = 1
+vim.cmd.colorscheme("vim-monotone")

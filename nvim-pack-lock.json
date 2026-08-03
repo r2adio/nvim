@@ -18,7 +18,7 @@
       "src": "gh:rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "5403b36b2a50495d472596d8f9fbe57554ecc84b",
+      "rev": "28440c741e927592877514fba3db21eb188caec8",
       "src": "gh:ibhagwan/fzf-lua"
     },
     "guh.nvim": {
@@ -26,7 +26,7 @@
       "src": "gh:justinmk/guh.nvim"
     },
     "kulala.nvim": {
-      "rev": "b78b1aab31844bdba8a94041ff22a61d1563ba35",
+      "rev": "e4e8615dc07d9423f3dd52ad5af962db09d26a52",
       "src": "gh:mistweaverco/kulala.nvim"
     },
     "marks.nvim": {
@@ -41,16 +41,12 @@
       "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
       "src": "gh:mason-org/mason.nvim"
     },
-    "monochrome.nvim": {
-      "rev": "2de78d9688ea4a177bcd9be554ab9192337d35ff",
-      "src": "gh:kdheepak/monochrome.nvim"
-    },
     "nvim-dap": {
       "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
       "src": "gh:mfussenegger/nvim-dap"
     },
     "nvim-dap-view": {
-      "rev": "440ec66c2b26470ec97cd4d6667cdd4b51cbc7cb",
+      "rev": "eda349094a87c6ff5a9c75bbbc88bce45836ae08",
       "src": "gh:igorlfs/nvim-dap-view"
     },
     "nvim-lint": {
@@ -58,20 +54,20 @@
       "src": "gh:mfussenegger/nvim-lint"
     },
     "nvim-treesitter": {
-      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "rev": "7b6cc8949f9999c5ed91436cbe24aa5f99c42025",
       "src": "gh:nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-treesitter-context": {
-      "rev": "b311b30818951d01f7b4bf650521b868b3fece16",
+      "rev": "f3061339b8eaf9fda873600bc425b8d2d8502533",
       "src": "gh:nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
+      "rev": "898ee307df58f854d11cd7edd06472574d48014e",
       "src": "gh:nvim-treesitter/nvim-treesitter-textobjects"
     },
     "orgmode": {
-      "rev": "4f99b3780950370e49d6ab88d041b2afe4da2566",
+      "rev": "f32a06d4b5399dad8bf0478c772bf6c513f02dcf",
       "src": "gh:nvim-orgmode/orgmode"
     },
     "plenary.nvim": {
@@ -95,7 +91,7 @@
       "src": "gh:tpope/vim-fugitive"
     },
     "vim-gitgutter": {
-      "rev": "21c977e8597c468c7dc76001389b0b430d46a4b0",
+      "rev": "90b75207bd9b55d8ac4af15f72b4e935462014d0",
       "src": "gh:airblade/vim-gitgutter"
     },
     "vim-surround": {

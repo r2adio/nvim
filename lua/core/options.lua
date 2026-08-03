@@ -30,7 +30,7 @@ vim.o.expandtab = true -- convert tabs to spaces
 vim.o.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.o.softtabstop = 2 -- Number of spaces that a <Tab> counts for while editing
 vim.o.tabstop = 2 -- insert 2 spaces for a tab
-vim.o.cursorline = false -- highlight the current line
+vim.o.cursorline = true -- highlight the current line
 vim.o.numberwidth = 2 -- set number column width to 2 {default 4}
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.o.wrap = true -- display lines as one long line
@@ -38,7 +38,7 @@ vim.o.linebreak = true --wraps lines at word boundaries
 vim.o.scrolloff = math.floor(vim.o.lines / 2) - 7 -- will always keep 8 lines of context
 vim.o.sidescrolloff = 8
 vim.o.guicursor = ""
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = "100"
 vim.o.winborder = "rounded"
 vim.opt.exrc = true
 
@@ -89,45 +89,15 @@ vim.cmd("packadd nvim.difftool")
 vim.cmd("packadd nvim.undotree") -- enable default undotree plugin
 
 -- netrw plugin
-vim.g.netrw_hide = 1
-vim.g.netrw_liststyle = 1
-vim.g.netrw_winsize = 25
-vim.g.netrw_banner = 0
-
--- statusline
-local modes = {
-	["n"] = "[NORMAL]",
-	["no"] = "[NORMAL]",
-	["v"] = "[VISUAL]",
-	["V"] = "[VISUAL LINE]",
-	[" "] = "[VISUAL BLOCK]", -- CTRL-V
-	["s"] = "[SELECT]",
-	["S"] = "[SELECT LINE]",
-	["i"] = "[INSERT]",
-	["ic"] = "[INSERT]",
-	["R"] = "[REPLACE]",
-	["Rv"] = "[VISUAL REPLACE]",
-	["c"] = "[COMMAND]",
-	["cv"] = "[VIM EX]",
-	["ce"] = "[EX]",
-	["r"] = "[PROMPT]",
-	["rm"] = "[MORE]",
-	["r?"] = "[CONFIRM]",
-	["!"] = "[SHELL]",
-	["t"] = "[TERMINAL]",
-}
-function _G.mode()
-	local current_mode = vim.api.nvim_get_mode().mode
-	return string.format(" %s ", modes[current_mode] or current_mode)
-end
-vim.opt.statusline = "%{v:lua.mode()}" .. vim.opt.statusline:get()
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
 
 vim.opt.path:append("**")
 vim.opt.wildignore:append({
 	"*/node_modules/*",
 	"*/dist/*",
 	"*/build/*",
-	"*/.git/*",
+	-- "*/.git/*",
 	"*/.cache/*",
 	"*/.next/*",
 	"*.log",

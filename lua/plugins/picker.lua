@@ -1,24 +1,39 @@
 vim.pack.add({ "gh:ibhagwan/fzf-lua" })
 
 require("fzf-lua").setup({
-	-- ui_select = true,
 	winopts = {
-		height = 0.45, -- window height
-		width = 1.00, -- window width
-		row = 1.00, -- window row position (0=top, 1=bottom)
-		col = 1.00, -- window col position (0=left, 1=right)
-		border = "rounded",
+		relative = "editor",
+		width = 1.00,
+		height = 0.33,
+		row = 0.95,
+		col = 0.50,
+		border = "none",
+		backdrop = 95,
+		preview = { hidden = true },
 	},
+
 	fzf_opts = {
-		-- options are sent as `<left>=<right>`
-		-- set to `false` to remove a flag
-		-- set to `true` for a no-value flag
-		-- for raw args use `fzf_args` instead
-		["--ansi"] = true,
-		["--info"] = "inline-right", -- fzf < v0.42 = "inline"
+		["--layout"] = "default",
 		["--height"] = "100%",
-		["--layout"] = "reverse",
 		["--border"] = "none",
-		["--highlight-line"] = true, -- fzf >= v0.53
+		["--info"] = "hidden",
+		["--scrollbar"] = false,
+		["--pointer"] = " ",
+		["--marker"] = " ",
+	},
+
+	files = {
+		previewer = false,
+		cwd_prompt = false,
+		git_icons = false,
+		file_icons = false,
+		-- path_shorten = 1,
+		fd_opts = [[
+      --color=never
+      --type f
+      --hidden
+      --follow
+      --exclude .git
+    ]],
 	},
 })
