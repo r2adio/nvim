@@ -1,13 +1,11 @@
 vim.lsp.enable({
 	"clangd",
 	"gopls",
-	-- "templ",
 	"rust_analyzer",
 	"zls",
 	"lua_ls",
 	"pyright",
 	"ruff",
-	-- "mesonlsp",
 	"ts_ls",
 	"tailwind",
 	"emmet_ls",
@@ -21,8 +19,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			return
 		end
 		-- check if blink.cmp or nvim-cmp is loaded
-		local has_blink = pcall(require, "blink.cmp")
-		local has_cmp = pcall(require, "cmp")
+		local has_blink = package.loaded["blink.cmp"] ~= nil
+		local has_cmp = package.loaded["cmp"] ~= nil
 
 		-- only enable native completion if no completion plugin exists
 		if not has_blink and not has_cmp then

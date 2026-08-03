@@ -25,7 +25,7 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 keymap("n", "<leader><leader>", "<cmd>Dirvish .<cr>")
 
 -- replace autopairs plugin
-local function auto_pairs(open, close)
+local function auto_pairs(open, close, skip_if_word_char)
 	return function()
 		local col = vim.fn.col(".")
 		local line = vim.fn.getline(".")
@@ -34,14 +34,17 @@ local function auto_pairs(open, close)
 		-- If next char is the closing one, just move out
 		if next_char == close then
 			return "<Right>"
-		else
-			return open .. close .. "<Left>"
 		end
+		-- Skip pairing inside words (e.g. `don't`)
+		if skip_if_word_char and next_char ~= "" and next_char:match("%w") then
+			return open
+		end
+		return open .. close .. "<Left>"
 	end
 end
-keymap("i", '"', auto_pairs('"', '"'), { expr = true })
-keymap("i", "'", auto_pairs("'", "'"), { expr = true })
-keymap("i", "`", auto_pairs("`", "`"), { expr = true })
+keymap("i", '"', auto_pairs('"', '"', true), { expr = true })
+keymap("i", "'", auto_pairs("'", "'", true), { expr = true })
+keymap("i", "`", auto_pairs("`", "`", true), { expr = true })
 keymap("i", "[", auto_pairs("[", "]"), { expr = true })
 keymap("i", "(", auto_pairs("(", ")"), { expr = true })
 keymap("i", "{", auto_pairs("{", "}"), { expr = true })
@@ -49,31 +52,3 @@ keymap("i", "<", auto_pairs("<", ">"), { expr = true })
 keymap("i", "/*", "/**/<left><left>")
 
 keymap("i", "<C-l>", "<Del>")
-
--- kulala.nvim
-keymap("n", "<leader>x", ":lua require('kulala').", { silent = true, desc = "Open Kulala" })
-
--- fugitive
-keymap("n", "gs", vim.cmd.Git)
-local autocmd = vim.api.nvim_create_autocmd
-autocmd("BufWinEnter", {
-	group = vim.api.nvim_create_augroup("Fugitive_Config", {}),
-	pattern = "*",
-	callback = function()
-		if vim.bo.ft ~= "fugitive" then -- activate only in fugitive buffers
-			return
-		end
-		local bufnr = vim.api.nvim_get_current_buf()
-		-- local opts = { buffer = bufnr, noremap = true, silent = true }
-		keymap("n", "<leader>P", function() -- rebase always
-			vim.cmd("Git pull --rebase")
-		end, opts)
-
-		-- NOTE: It allows me to easily set the branch i am pushing and any tracking
-		-- needed if i did not set the branch up correctly
-		keymap("n", "<leader>t", ":Git push -u origin ", opts)
-		keymap("n", "<leader>ll", ":Git log --graph --decorate --oneline")
-		keymap("n", "<leader>la", ":Git log --graph --decorate --oneline --all")
-	end,
-})
-keymap("n", "<leader>hU", "<cmd>G restore --staged %<cr>", opts)

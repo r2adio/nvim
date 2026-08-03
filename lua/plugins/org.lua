@@ -25,24 +25,12 @@ function LinkPingType:autocomplete(link)
 end
 
 require("orgmode").setup({
-	org_agenda_files = { "~/org/**/*", "~/org/work.org", "~/org/personal.org" },
+	org_agenda_files = { "~/org/**/*" },
 	org_default_notes_file = "~/org/todo.org",
 
 	hyperlinks = {
 		sources = {
 			LinkPingType,
-			{
-				get_name = function()
-					return "my_custom_type"
-				end,
-				follow = function(self, link)
-					print("Following link:", link)
-					return true
-				end,
-				autocomplete = function(self, link)
-					return { "my_custom_type:my_custom_link" }
-				end,
-			},
 		},
 	},
 
@@ -62,7 +50,7 @@ require("orgmode").setup({
 	org_custom_agenda_views = {
 		w = {
 			description = "Work agenda",
-			agenda = { files = { "~/or/work.org" } },
+			agenda = { files = { "~/org/work.org" } },
 		},
 		p = {
 			description = "Personal agenda",

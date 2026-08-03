@@ -14,9 +14,7 @@ require("conform").setup({
 		-- golang = { "golines" },
 		go = { "goimports", "gofmt" },
 		yaml = { "prettier" },
-		markdown = { "biome" },
 		graphql = { "biome" },
-		liquid = { "biome" },
 		lua = { "stylua" },
 		python = {
 			--[["ruff_fix",]]
@@ -28,6 +26,9 @@ require("conform").setup({
 
 vim.api.nvim_create_autocmd("InsertLeave", {
 	callback = function()
+		if vim.bo.buftype ~= "" or vim.api.nvim_buf_get_name(0) == "" then
+			return
+		end
 		require("conform").format({
 			lsp_fallback = true,
 			async = false,

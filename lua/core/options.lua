@@ -88,9 +88,10 @@ vim.cmd("packadd cfilter")
 vim.cmd("packadd nvim.difftool")
 vim.cmd("packadd nvim.undotree") -- enable default undotree plugin
 
--- netrw plugin
+-- netrw plugin (replaced by net.lua in nvim 0.12)
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
+vim.g.loaded_nvim_net_plugin = 0
 
 vim.opt.path:append("**")
 vim.opt.wildignore:append({

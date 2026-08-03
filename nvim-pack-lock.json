@@ -62,10 +62,6 @@
       "rev": "f3061339b8eaf9fda873600bc425b8d2d8502533",
       "src": "gh:nvim-treesitter/nvim-treesitter-context"
     },
-    "nvim-treesitter-textobjects": {
-      "rev": "898ee307df58f854d11cd7edd06472574d48014e",
-      "src": "gh:nvim-treesitter/nvim-treesitter-textobjects"
-    },
     "orgmode": {
       "rev": "f32a06d4b5399dad8bf0478c772bf6c513f02dcf",
       "src": "gh:nvim-orgmode/orgmode"
@@ -73,6 +69,10 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "gh:nvim-lua/plenary.nvim"
+    },
+    "typr": {
+      "rev": "584e4ef34dea25a4035627794322f315b22d1253",
+      "src": "gh:nvzone/typr"
     },
     "vim-dadbod": {
       "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
@@ -97,6 +97,10 @@
     "vim-surround": {
       "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
       "src": "gh:tpope/vim-surround"
+    },
+    "volt": {
+      "rev": "620de1321f275ec9d80028c68d1b88b409c0c8b1",
+      "src": "gh:nvzone/volt"
     }
   }
 }

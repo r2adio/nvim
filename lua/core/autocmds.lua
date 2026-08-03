@@ -1,7 +1,7 @@
 -- autocmds:
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking test",
+	desc = "Highlight when yanking text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 50 })
@@ -10,37 +10,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = "*",
+	group = vim.api.nvim_create_augroup("RestoreCursorPosition", { clear = true }),
 	callback = function()
 		if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
 			vim.cmd('normal! g`"')
 		end
 	end,
 }) -- return to last edit position when opening files
-
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "*.js", "*.html", "*.css", "*.lua", "*.md" },
-	callback = function()
-		vim.opt.tabstop = 2
-		vim.opt.shiftwidth = 2
-		vim.opt.softtabstop = 2
-	end,
-}) -- javascript, html, css, lua, md formatting
-
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = "*.py",
-	callback = function()
-		-- vim.opt.textwidth = 79
-		-- vim.opt.colorcolumn = "79"
-	end,
-}) -- python formatting
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "nvim-undotree",
-	callback = function()
-		vim.cmd.wincmd("H")
-		vim.api.nvim_win_set_width(0, 40)
-	end,
-}) -- builtin undotree plugin
 
 vim.api.nvim_create_autocmd("ColorScheme", {
 	callback = function()
