@@ -7,16 +7,13 @@ return {
 			-- codeLens = { enable = true },
 			hint = { enable = true, arrayIndex = "Disable" },
 			runtime = { version = "LuaJIT" },
-			diagnostics = { globals = { "vim" } },
+			diagnostics = {},
 			completion = { callSnippet = "Replace" },
 			format = {
 				enable = true,
 				defaultConfig = { indent_style = "space", indent_size = "2" },
 			},
-			workspace = {
-				checkThirdParty = false,
-				library = { vim.env.VIMRUNTIME .. "/lua", "${3rd}/luv/library" },
-			},
+			workspace = { checkThirdParty = false, library = { vim.env.VIMRUNTIME } },
 			telemetry = { enable = false },
 		},
 	},

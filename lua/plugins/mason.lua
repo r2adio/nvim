@@ -4,11 +4,7 @@ local mason = require("mason")
 local mason_tool_installer = require("mason-tool-installer")
 mason.setup({
 	ui = {
-		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
-		},
+		icons = { package_installed = "✓", package_pending = "➜", package_uninstalled = "✗" },
 	},
 })
 mason_tool_installer.setup({
@@ -22,7 +18,7 @@ mason_tool_installer.setup({
 		"emmet-language-server",
 		-- "prisma-language-server",
 		"pyright",
-		"typescript-language-server",
+		"tsgo",
 		"zls",
 		"gopls",
 		-- "templ",

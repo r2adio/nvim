@@ -6,7 +6,7 @@ vim.lsp.enable({
 	"lua_ls",
 	"pyright",
 	"ruff",
-	"ts_ls",
+	"tsgo",
 	"tailwind",
 	"emmet_ls",
 	"astro-ls",

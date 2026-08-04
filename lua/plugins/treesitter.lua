@@ -38,7 +38,10 @@ vim.defer_fn(function()
 	end, parsers_to_install)
 	if #to_install > 0 then
 		-- notify if parsers are missing
-		vim.notify(string.format("Installing %d treesitter parsers in background...", #to_install), vim.log.levels.INFO)
+		vim.notify(
+			string.format("Installing %d treesitter parsers in background...", #to_install),
+			vim.log.levels.INFO
+		)
 		require("nvim-treesitter").install(to_install)
 	end
 end, 100)
@@ -103,7 +106,10 @@ require("treesitter-context").setup({
 -- auto-update parsers when updating nvim-treesitter
 vim.api.nvim_create_autocmd("PackChanged", {
 	desc = "Handle nvim-treesitter updates",
-	group = vim.api.nvim_create_augroup("nvim-treesitter-pack-changed-update-handler", { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		"nvim-treesitter-pack-changed-update-handler",
+		{ clear = true }
+	),
 	callback = function(event)
 		if event.data.kind == "update" and event.data.spec.name == "nvim-treesitter" then
 			vim.notify("nvim-treesitter updated, running update...", vim.log.levels.INFO)

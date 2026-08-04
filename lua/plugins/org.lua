@@ -15,10 +15,7 @@ function LinkPingType:follow(link)
 	return true
 end
 function LinkPingType:autocomplete(link)
-	local items = {
-		"ping:google.com",
-		"ping:github.com",
-	}
+	local items = { "ping:google.com", "ping:github.com" }
 	return vim.tbl_filter(function(item)
 		return vim.startswith(item, link)
 	end, items)
@@ -27,12 +24,7 @@ end
 require("orgmode").setup({
 	org_agenda_files = { "~/org/**/*" },
 	org_default_notes_file = "~/org/todo.org",
-
-	hyperlinks = {
-		sources = {
-			LinkPingType,
-		},
-	},
+	hyperlinks = { sources = { LinkPingType } },
 
 	org_capture_templates = {
 		w = {
@@ -48,13 +40,7 @@ require("orgmode").setup({
 	},
 
 	org_custom_agenda_views = {
-		w = {
-			description = "Work agenda",
-			agenda = { files = { "~/org/work.org" } },
-		},
-		p = {
-			description = "Personal agenda",
-			agenda = { files = { "~/org/personal.org" } },
-		},
+		w = { description = "Work agenda", agenda = { files = { "~/org/work.org" } } },
+		p = { description = "Personal agenda", agenda = { files = { "~/org/personal.org" } } },
 	},
 })

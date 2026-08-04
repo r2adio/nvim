@@ -43,7 +43,11 @@ dap.configurations.python = {
 		name = "Launch file",
 		program = "${file}",
 		pythonPath = function()
-			return vim.fn.input("Path to python interpreter: ", vim.fn.exepath("python3") or "python3", "file")
+			return vim.fn.input(
+				"Path to python interpreter: ",
+				vim.fn.exepath("python3") or "python3",
+				"file"
+			)
 		end,
 	},
 }

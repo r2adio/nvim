@@ -5,7 +5,6 @@ require("lint").linters_by_ft = {
 	typescript = { "biomejs" },
 	javascriptreact = { "biomejs" },
 	typescriptreact = { "biomejs" },
-	-- svelte = { "eslint_d" },
 	python = { "ruff" },
 	go = {}, -- disable linting for Go
 }
@@ -20,7 +19,3 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 		require("lint").try_lint()
 	end,
 })
-
-vim.keymap.set("n", "<leader>l", function()
-	require("lint").try_lint()
-end, { desc = "Trigger linting for current file" })

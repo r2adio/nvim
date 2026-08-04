@@ -18,7 +18,7 @@ local sources = {
 			score_offset = 75,
 		},
 		dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-		make = { name = "Make", module = "blink.make" },
+		make = { name = "Make", module = "make-target" },
 	},
 }
 
