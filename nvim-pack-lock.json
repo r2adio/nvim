@@ -22,20 +22,12 @@
       "src": "gh:justinmk/guh.nvim"
     },
     "kulala.nvim": {
-      "rev": "e4e8615dc07d9423f3dd52ad5af962db09d26a52",
+      "rev": "7c10bd7b56f11dca25e5e948f817ca4eee1cb669",
       "src": "gh:mistweaverco/kulala.nvim"
     },
     "marks.nvim": {
       "rev": "f353e8c08c50f39e99a9ed474172df7eddd89b72",
       "src": "gh:chentoast/marks.nvim"
-    },
-    "mason-tool-installer.nvim": {
-      "rev": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
-      "src": "gh:WhoIsSethDaniel/mason-tool-installer.nvim"
-    },
-    "mason.nvim": {
-      "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
-      "src": "gh:mason-org/mason.nvim"
     },
     "nvim-dap": {
       "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
@@ -51,20 +43,11 @@
     },
     "nvim-treesitter": {
       "rev": "7b6cc8949f9999c5ed91436cbe24aa5f99c42025",
-      "src": "gh:nvim-treesitter/nvim-treesitter",
-      "version": "'main'"
-    },
-    "nvim-treesitter-context": {
-      "rev": "f3061339b8eaf9fda873600bc425b8d2d8502533",
-      "src": "gh:nvim-treesitter/nvim-treesitter-context"
+      "src": "gh:nvim-treesitter/nvim-treesitter"
     },
     "orgmode": {
       "rev": "f32a06d4b5399dad8bf0478c772bf6c513f02dcf",
       "src": "gh:nvim-orgmode/orgmode"
-    },
-    "plenary.nvim": {
-      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
-      "src": "gh:nvim-lua/plenary.nvim"
     },
     "typr": {
       "rev": "584e4ef34dea25a4035627794322f315b22d1253",

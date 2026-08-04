@@ -1,7 +1,6 @@
 require("plugins.colorscheme")
 require("plugins.picker")
 require("plugins.packmanager")
-require("plugins.mason")
 require("plugins.dap")
 require("plugins.conform")
 require("plugins.lint")

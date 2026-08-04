@@ -1,10 +1,10 @@
 vim.lsp.enable({
 	"clangd",
 	"gopls",
-	"rust_analyzer",
+	-- "rust_analyzer",
 	"zls",
 	"lua_ls",
-	"pyright",
+	"basedpyright",
 	"ruff",
 	"tsgo",
 	"tailwind",
