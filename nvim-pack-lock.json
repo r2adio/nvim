@@ -9,10 +9,6 @@
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "gh:stevearc/conform.nvim"
     },
-    "exec.nvim": {
-      "rev": "109a7786d94d0fbf87ef6dc22c291749a51417f7",
-      "src": "file:///Users/ritikh/projects/exec.nvim"
-    },
     "friendly-snippets": {
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "gh:rafamadriz/friendly-snippets"

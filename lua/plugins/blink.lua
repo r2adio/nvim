@@ -4,7 +4,7 @@ vim.pack.add({
 })
 
 local sources = {
-	default = { "lsp", "path", "snippets", "buffer" },
+	default = { "lsp", "path", "snippets", "buffer", "make" },
 
 	per_filetype = {
 		org = { "orgmode", "buffer" },
@@ -18,6 +18,7 @@ local sources = {
 			score_offset = 75,
 		},
 		dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+		make = { name = "Make", module = "blink.make" },
 	},
 }
 
@@ -44,6 +45,19 @@ require("blink.cmp").setup({
 	},
 
 	sources = sources,
+
+	cmdline = {
+		sources = function()
+			local type = vim.fn.getcmdtype()
+			if type == "/" or type == "?" then
+				return { "buffer" }
+			end
+			if type == ":" then
+				return { "cmdline", "make", "buffer" }
+			end
+			return {}
+		end,
+	},
 
 	snippets = { preset = "default" },
 
