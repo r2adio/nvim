@@ -37,6 +37,22 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	end,
 }) -- undercurl over underline for diagnostic lines
 
+vim.api.nvim_create_autocmd("CompleteChanged", {
+	group = vim.api.nvim_create_augroup("CompletionDocBorder", { clear = true }),
+	callback = function()
+		vim.schedule(function()
+			local info = vim.fn.complete_info({ "selected", "preview_winid" })
+			if
+				info.preview_winid
+				and info.preview_winid >= 0
+				and vim.api.nvim_win_is_valid(info.preview_winid)
+			then
+				pcall(vim.api.nvim_win_set_config, info.preview_winid, { border = "single" })
+			end
+		end)
+	end,
+})
+
 vim.api.nvim_create_augroup("AutoCreateDirs", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {
 	group = "AutoCreateDirs",

@@ -1,10 +1,11 @@
 vim.o.nu = true -- enable line numbers
 vim.o.relativenumber = true -- relative line numbers
 vim.o.backup = false -- creates a backup file
--- vim.o.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.o.cmdheight = 1 -- more space in the neovim command line for displaying messages
--- vim.o.autocomplete = true
-vim.opt.completeopt = { "menuone", "noinsert", "noselect", "popup", "fuzzy" } -- mostly just for cmp
+vim.o.autocomplete = true -- enable native completion engine
+vim.opt.complete = "o,.,w,b,u,t" -- omni func, current buffer, then windows...
+vim.opt.completeopt = { "menu", "menuone", "noselect", "preview", "fuzzy", "noinsert" } -- for cmp menu
+-- vim.opt.completeitemalign = { "kind", "abbr", "menu" } -- align menu items
 vim.opt.shortmess:append("c")
 vim.o.conceallevel = 2 -- so that `` is visible in markdown files
 vim.o.encoding = "utf-8" -- set encoding
@@ -18,8 +19,9 @@ vim.o.showmode = true -- we don't need to see things like -- INSERT -- anymore
 vim.o.showtabline = 1 -- always show tabs
 vim.o.smartcase = true -- smart case
 vim.o.smartindent = true -- make indenting smarter again
--- vim.o.splitbelow = true -- force all horizontal splits to go below current window
--- vim.o.splitright = true -- force all vertical splits to go to the right of current window
+vim.o.splitbelow = true -- force all horizontal splits to go below current window
+vim.o.splitright = true -- force all vertical splits to go to the right of current window
+vim.o.laststatus = 3
 vim.o.swapfile = false -- creates a swapfile
 vim.o.termguicolors = true -- set term gui colors (most terminals support this)
 vim.o.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
@@ -39,8 +41,16 @@ vim.o.scrolloff = math.floor(vim.o.lines / 2) - 7 -- will always keep 8 lines of
 vim.o.sidescrolloff = 8
 vim.o.guicursor = ""
 vim.o.colorcolumn = "100"
-vim.o.winborder = "rounded"
+vim.o.winborder = "single"
+vim.o.pumborder = "single"
 vim.opt.exrc = true
+
+-- tags, dict and thesaurus
+vim.opt.tags = { "./tags", "tags" } --i_CTRL-X_CTRL-]
+vim.opt.dictionary = { -- i_CTRL-X_CTRL-K
+	"/usr/share/dict/words",
+	vim.fn.stdpath("config") .. "/dict/custom.dict",
+}
 
 -- fold options
 vim.o.foldmethod = "expr" -- with lsp+treesitter

@@ -1,3 +1,5 @@
+vim.bo.omnifunc = "vim_dadbod_completion#omni"
+
 -- SQL comments
 vim.bo.commentstring = "-- %s"
 

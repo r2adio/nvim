@@ -1,4 +1,4 @@
-vim.pack.add({ "gh:tpope/vim-fugitive", "gh:airblade/vim-gitgutter" })
+vim.pack.add({ "gh:tpope/vim-fugitive" })
 
 vim.pack.add({ "gh:justinmk/vim-dirvish" })
 vim.pack.add({ "gh:justinmk/guh.nvim" })

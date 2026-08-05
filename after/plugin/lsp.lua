@@ -18,15 +18,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		if not client then -- nil check for client
 			return
 		end
-		-- check if blink.cmp or nvim-cmp is loaded
-		local has_blink = package.loaded["blink.cmp"] ~= nil
-		local has_cmp = package.loaded["cmp"] ~= nil
-
-		-- only enable native completion if no completion plugin exists
-		if not has_blink and not has_cmp then
-			if client:supports_method("textDocument/completion") then
-				vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = false })
-			end
+		if client:supports_method("textDocument/completion") then
+			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
 		end
 	end,
 }) -- auto-completion w/ vim.lsp.completion.enable
@@ -62,10 +55,13 @@ vim.lsp.config("*", {
 vim.diagnostic.config({
 	-- virtual_lines = { current_line = true },
 	virtual_text = { current_line = true },
-	float = { border = "rounded" },
+	float = { border = "single" },
 	update_in_insert = false,
 	severity_sort = true,
 })
+
+-- configure signature help
+vim.lsp.buf.signature_help()
 
 -- vim.api.nvim_create_autocmd("LspProgress", {
 -- 	buffer = buf,

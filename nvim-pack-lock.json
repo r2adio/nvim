@@ -1,33 +1,16 @@
 {
   "plugins": {
-    "blink.cmp": {
-      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
-      "src": "gh:Saghen/blink.cmp",
-      "version": ">=0.0.0"
-    },
     "conform.nvim": {
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "gh:stevearc/conform.nvim"
     },
-    "friendly-snippets": {
-      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
-      "src": "gh:rafamadriz/friendly-snippets"
-    },
     "fzf-lua": {
-      "rev": "28440c741e927592877514fba3db21eb188caec8",
+      "rev": "c46b51aac910a2115545029f74b0a04df7ed1872",
       "src": "gh:ibhagwan/fzf-lua"
     },
     "guh.nvim": {
       "rev": "943779f7cdb0acee203985ad531fb53ff95d9c8e",
       "src": "gh:justinmk/guh.nvim"
-    },
-    "kulala.nvim": {
-      "rev": "7c10bd7b56f11dca25e5e948f817ca4eee1cb669",
-      "src": "gh:mistweaverco/kulala.nvim"
-    },
-    "marks.nvim": {
-      "rev": "f353e8c08c50f39e99a9ed474172df7eddd89b72",
-      "src": "gh:chentoast/marks.nvim"
     },
     "nvim-dap": {
       "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
@@ -49,10 +32,6 @@
       "rev": "f32a06d4b5399dad8bf0478c772bf6c513f02dcf",
       "src": "gh:nvim-orgmode/orgmode"
     },
-    "typr": {
-      "rev": "584e4ef34dea25a4035627794322f315b22d1253",
-      "src": "gh:nvzone/typr"
-    },
     "vim-dadbod": {
       "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
       "src": "gh:tpope/vim-dadbod"
@@ -69,17 +48,9 @@
       "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
       "src": "gh:tpope/vim-fugitive"
     },
-    "vim-gitgutter": {
-      "rev": "90b75207bd9b55d8ac4af15f72b4e935462014d0",
-      "src": "gh:airblade/vim-gitgutter"
-    },
     "vim-surround": {
       "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
       "src": "gh:tpope/vim-surround"
-    },
-    "volt": {
-      "rev": "620de1321f275ec9d80028c68d1b88b409c0c8b1",
-      "src": "gh:nvzone/volt"
     }
   }
 }
