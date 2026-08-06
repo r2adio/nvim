@@ -13,8 +13,3 @@ vim.pack.add({ "gh:tpope/vim-dadbod", "gh:kristijanhusak/vim-dadbod-completion" 
 
 -- local plugin
 -- vim.pack.add({ ("file://%s/projects/exec.nvim"):format(vim.env.HOME) })
-
--- configurations
-require("pack.lint")
-require("pack.conform")
-require("pack.treesitter")
