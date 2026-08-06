@@ -1,5 +1,3 @@
-vim.pack.add({ "gh:mfussenegger/nvim-lint" })
-
 require("lint").linters_by_ft = {
 	javascript = { "biomejs" },
 	typescript = { "biomejs" },

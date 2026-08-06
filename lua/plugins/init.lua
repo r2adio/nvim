@@ -1,5 +1,0 @@
-require("plugins.colorscheme")
-require("plugins.conform")
-require("plugins.lint")
-require("plugins.vim")
-require("plugins.treesitter")

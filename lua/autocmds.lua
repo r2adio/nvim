@@ -39,13 +39,17 @@ vim.api.nvim_create_autocmd("CompleteChanged", {
 	group = vim.api.nvim_create_augroup("CompletionDocBorder", { clear = true }),
 	callback = function()
 		vim.schedule(function()
-			local win = vim.fn.complete_info({ "preview_winid" }).preview_winid
-			if win > 0 and vim.api.nvim_win_is_valid(win) then
-				pcall(vim.api.nvim_win_set_config, win, { border = "single" })
+			local info = vim.fn.complete_info({ "selected", "preview_winid" })
+			if
+				info.preview_winid
+				and info.preview_winid >= 0
+				and vim.api.nvim_win_is_valid(info.preview_winid)
+			then
+				pcall(vim.api.nvim_win_set_config, info.preview_winid, { border = "single" })
 			end
 		end)
 	end,
-}) -- style completion documentation window with a border
+}) --style completion documentation window with a border
 
 vim.api.nvim_create_augroup("AutoCreateDirs", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {

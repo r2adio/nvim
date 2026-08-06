@@ -1,5 +1,3 @@
-vim.pack.add({ "gh:stevearc/conform.nvim" })
-
 require("conform").setup({
 	formatters_by_ft = {
 		javascript = { "biome" },
