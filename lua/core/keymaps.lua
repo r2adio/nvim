@@ -51,4 +51,5 @@ keymap("i", "{", auto_pairs("{", "}"), { expr = true })
 keymap("i", "<", auto_pairs("<", ">"), { expr = true })
 keymap("i", "/*", "/**/<left><left>")
 
-keymap("i", "<C-l>", "<Del>")
+keymap("i", "<C-l>", "<Del>", { silent = true })
+keymap("n", "gs", ":Git<cr>", { silent = true })

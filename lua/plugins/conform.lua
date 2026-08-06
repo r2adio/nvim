@@ -11,16 +11,13 @@ require("conform").setup({
 		css = { "biome" },
 		html = { "biome" },
 		json = { "biome" },
-		-- golang = { "golines" },
-		go = { "goimports", "gofmt" },
-		yaml = { "prettier" },
+		go = { "gofmt" },
+		yaml = { "yamlfmt" },
 		graphql = { "biome" },
 		lua = { "stylua" },
-		python = {
-			--[["ruff_fix",]]
-			"ruff_format",
-			"ruff_organize_imports",
-		},
+		python = { "ruff_format", "ruff_organize_imports" },
+		nix = { "nixfmt" },
+		http = { "kulala-fmt" },
 	},
 })
 

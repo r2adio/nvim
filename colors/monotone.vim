@@ -40,9 +40,6 @@ endif
 if !exists('g:monotone_contrast_factor')
 	let g:monotone_contrast_factor = 1
 endif
-if !exists('g:monotone_transparent')
-	let g:monotone_transparent = 0
-endif
 
 let g:loaded_monotone = 1
 
@@ -105,12 +102,9 @@ function s:MonotoneColors(color, secondary_hue_offset, emphasize_comments, empha
 	syntax reset
 	let g:colors_name = 'monotone'
 
-	function! s:Hi(group, guifg, guibg, ctermfg, ctermbg, attr, ...)
-		let l:keep_bg = a:0 > 0 ? a:1 : 0
-		let l:guibg = (g:monotone_transparent && !l:keep_bg) ? 'NONE' : a:guibg
-		let l:ctermbg = (g:monotone_transparent && !l:keep_bg) ? 'NONE' : a:ctermbg
+	function! s:Hi(group, guifg, guibg, ctermfg, ctermbg, attr)
 		exec printf('hi %s guifg=%s guibg=%s gui=%s ctermfg=%s ctermbg=%s cterm=%s',
-			\ a:group, a:guifg, l:guibg, a:attr, a:ctermfg, l:ctermbg, a:attr)
+			\ a:group, a:guifg, a:guibg, a:attr, a:ctermfg, a:ctermbg, a:attr)
 	endfunction
 
 	function! s:HiFG(group, guifg, ctermfg, attr)
@@ -118,34 +112,31 @@ function s:MonotoneColors(color, secondary_hue_offset, emphasize_comments, empha
 			\ a:group, a:guifg, a:attr, a:ctermfg, a:attr)
 	endfunction
 
-	function! s:HiBG(group, guibg, ctermbg, attr, ...)
-		let l:keep_bg = a:0 > 0 ? a:1 : 0
-		let l:guibg = (g:monotone_transparent && !l:keep_bg) ? 'NONE' : a:guibg
-		let l:ctermbg = (g:monotone_transparent && !l:keep_bg) ? 'NONE' : a:ctermbg
+	function! s:HiBG(group, guibg, ctermbg, attr)
 		exec printf('hi %s guibg=%s gui=%s ctermbg=%s cterm=%s',
-			\ a:group, l:guibg, a:attr, l:ctermbg, a:attr)
+			\ a:group, a:guibg, a:attr, a:ctermbg, a:attr)
 	endfunction
 
 	" Main colors
 	call s:Hi('Normal', s:color_normal, s:color_dark_3, 252, 233, 'NONE')
-	call s:Hi('Visual', s:color_dark_3, s:color_normal, 16, 248, 'NONE', 1)
+	call s:Hi('Visual', s:color_dark_3, s:color_normal, 16, 248, 'NONE')
 
 	" Cursors
-	call s:HiBG('Cursor', s:color_hl_1, 203, 'NONE', 1) " Normal cursor
-	call s:HiBG('CursorI', '#ffffff', 255, 'NONE', 1) " Insert cursor
-	call s:HiBG('CursorR', s:color_hl_2, 203, 'NONE', 1) " Replace cursor
-	call s:HiBG('CursorO', s:color_hl_3, 39, 'NONE', 1) " Operator-pending cursor
+	call s:HiBG('Cursor', s:color_hl_1, 203, 'NONE') " Normal cursor
+	call s:HiBG('CursorI', '#ffffff', 255, 'NONE') " Insert cursor
+	call s:HiBG('CursorR', s:color_hl_2, 203, 'NONE') " Replace cursor
+	call s:HiBG('CursorO', s:color_hl_3, 39, 'NONE') " Operator-pending cursor
 
 	" UI/special
 	call s:Hi('ColorColumn', 'NONE', s:color_dark_2, 'NONE', 234, 'NONE')
 	call s:Hi('CursorLine', 'NONE', s:color_dark_1, 'NONE', 234, 'NONE')
 	call s:Hi('CursorLineNr', s:color_bright_2, s:color_dark_1, 'NONE', 235, 'NONE')
 	call s:Hi('Folded', s:color_normal, s:color_dark_1, 252, 235, 'italic')
-	call s:Hi('Search', s:color_dark_3, s:color_hl_2, 16, 214, 'bold', 1)
-	call s:Hi('IncSearch', s:color_dark_3, s:color_hl_2, 16, 214, 'bold,reverse', 1)
+	call s:Hi('Search', s:color_dark_3, s:color_hl_2, 16, 214, 'bold')
+	call s:Hi('IncSearch', s:color_dark_3, s:color_hl_2, 16, 214, 'bold,reverse')
 	call s:Hi('LineNr', s:color_bright_0, 'NONE', 240, 'NONE', 'NONE')
 	call s:Hi('VertSplit', s:color_bright_0, 'NONE', 240, 'NONE', 'NONE')
-	call s:Hi('WildMenu', s:color_dark_3, s:color_normal, 16, 248, 'NONE', 1)
+	call s:Hi('WildMenu', s:color_dark_3, s:color_normal, 16, 248, 'NONE')
 	hi SpecialKey    guifg=NONE     guibg=NONE     gui=bold    ctermfg=NONE  ctermbg=NONE  cterm=bold
 	hi clear         FoldColumn
 	hi clear         SignColumn
@@ -158,13 +149,13 @@ function s:MonotoneColors(color, secondary_hue_offset, emphasize_comments, empha
 	call s:Hi('MoreMsg', s:color_hl_3, 'NONE', 153, 'NONE', 'bold')
 
 	" Parens
-	call s:Hi('MatchParen', s:color_dark_3, s:color_hl_2, 16, 214, 'NONE', 1)
+	call s:Hi('MatchParen', s:color_dark_3, s:color_hl_2, 16, 214, 'NONE')
 	hi link ParenMatch MatchParen
 
 	" Popup menu
 	call s:Hi('Pmenu', s:color_bright_1, s:color_dark_2, 246, 235, 'NONE')
 	call s:Hi('PmenuSbar', 'NONE', s:color_dark_2, 'NONE', 235, 'NONE')
-	call s:Hi('PmenuSel', s:color_dark_2, s:color_bright_2, 252, 235, 'NONE', 1)
+	call s:Hi('PmenuSel', s:color_dark_2, s:color_bright_2, 252, 235, 'NONE')
 	call s:Hi('PmenuThumb', 'NONE', s:color_dark_0, 'NONE', 235, 'NONE')
 
 	"" Statusline
@@ -209,11 +200,6 @@ function s:MonotoneColors(color, secondary_hue_offset, emphasize_comments, empha
 	hi QuickFixLine guibg=#333333 ctermbg=235
 	hi QFNormal guibg=#222222 ctermbg=234
 	hi QFEndOfBuffer guifg=#222222 ctermfg=234
-
-	if g:monotone_transparent
-		hi QuickFixLine guibg=NONE ctermbg=NONE
-		hi QFNormal guibg=NONE ctermbg=NONE
-	endif
 
 	" Non-highlighted syntax items
 	hi clear Conceal

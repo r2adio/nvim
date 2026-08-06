@@ -1,5 +1,1 @@
-# mac
-.DS_Store
-
-# Compiled Lua sources
-luac.out
+after/syntax

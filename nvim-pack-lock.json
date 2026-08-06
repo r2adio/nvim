@@ -4,9 +4,9 @@
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "gh:stevearc/conform.nvim"
     },
-    "fzf-lua": {
-      "rev": "c46b51aac910a2115545029f74b0a04df7ed1872",
-      "src": "gh:ibhagwan/fzf-lua"
+    "ctrlp.vim": {
+      "rev": "0065942ef13ce28293e2b26cb622d035da050b44",
+      "src": "gh:ctrlpvim/ctrlp.vim"
     },
     "guh.nvim": {
       "rev": "943779f7cdb0acee203985ad531fb53ff95d9c8e",
@@ -25,7 +25,7 @@
       "src": "gh:mfussenegger/nvim-lint"
     },
     "nvim-treesitter": {
-      "rev": "7b6cc8949f9999c5ed91436cbe24aa5f99c42025",
+      "rev": "3d3321b560a63ff92a8692401f303a5123336b86",
       "src": "gh:nvim-treesitter/nvim-treesitter"
     },
     "orgmode": {

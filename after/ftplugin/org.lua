@@ -1,4 +1,4 @@
-vim.pack.add({ "gh:nvim-orgmode/orgmode" })
+vim.cmd.packadd("orgmode")
 
 local LinkPingType = {}
 function LinkPingType:get_name()
@@ -8,10 +8,8 @@ function LinkPingType:follow(link)
 	if not vim.startswith(link, "ping:") then
 		return false
 	end
-	-- Get the part after the `ping:` part
-	local url = link:sub(6)
-	-- Open terminal in vertical split and ping the URL
-	vim.cmd("vsplit | term ping " .. url)
+	local url = link:sub(6) -- Get the part after the `ping:` part
+	vim.cmd("vsplit | term ping " .. url) -- Open terminal in vertical split and ping the URL
 	return true
 end
 function LinkPingType:autocomplete(link)
