@@ -18,4 +18,4 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>", ":Dirvish .<cr>")
 
 vim.keymap.set("i", "<C-l>", "<Del>")
-vim.keymap.set("n", "gs", ":Git<cr>")
+vim.keymap.set("n", "gs", ":0Git<cr>")

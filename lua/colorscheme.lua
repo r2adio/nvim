@@ -13,9 +13,8 @@ vim.g.sonokai_style = "shusia"
 vim.g.sonokai_better_performance = 1
 vim.g.sonokai_enable_italic = true
 
--- vim.cmd.colorscheme("sonokai")
--- vim.cmd.colorscheme("gruvbox-material")
 vim.cmd.colorscheme("monotone")
+-- monotone base16-ashes base16-tomorrow-night base16-grayscale-dark
 
 local transparent_groups = {
 	"Normal",

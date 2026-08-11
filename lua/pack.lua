@@ -2,6 +2,7 @@
 vim.pack.add({ "gh:stevearc/conform.nvim" })
 vim.pack.add({ "gh:mfussenegger/nvim-lint" })
 vim.pack.add({ "gh:nvim-treesitter/nvim-treesitter" })
+vim.pack.add({ "gh:danymat/neogen" })
 
 -- plugin w/o configs
 vim.pack.add({ "gh:justinmk/guh.nvim" })

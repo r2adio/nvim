@@ -5,7 +5,7 @@ vim.lsp.enable({
 	"zls",
 	"lua_ls",
 	"basedpyright",
-	"ruff",
+	-- "ruff",
 	"tsgo",
 	"tailwind",
 	"emmet_ls",

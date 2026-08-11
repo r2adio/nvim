@@ -24,10 +24,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		if vim.bo.buftype ~= "" or vim.api.nvim_buf_get_name(0) == "" then
 			return
 		end
-		require("conform").format({
-			lsp_fallback = true,
-			async = false,
-			timeout_ms = 1000,
-		})
+		require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 1000 })
 	end,
 })

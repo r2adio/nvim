@@ -1,5 +1,3 @@
-vim.cmd.packadd("orgmode")
-
 local LinkPingType = {}
 function LinkPingType:get_name()
 	return "ping"
